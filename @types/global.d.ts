@@ -58,7 +58,7 @@ export type MenuProps = {
 
 export type SectionContainerProps = {
   children: React.ReactNode
-  title: string
+  title?: string
   subtitle?: string
 }
 
