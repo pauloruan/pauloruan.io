@@ -25,7 +25,9 @@ export const sanityQueries = {
     "slug": slug.current
   }`,
   projects: `*[_type == 'project'] {
-    name,
+    title,
+    summary,
+    date,
     description,
     "slug": slug.current,
     repository,
@@ -35,7 +37,9 @@ export const sanityQueries = {
     "technologies": technologies[] -> slug.current
   }`,
   projectBySlug: `*[_type == "project" && slug.current == $slug] {
-    name,
+    title,
+    summary,
+    date,
     description,
     "slug": slug.current,
     repository,
@@ -53,6 +57,8 @@ export const sanityQueries = {
     location,
     "image": image.asset._ref,
     "alt": attribution,
-    content
+    content,
+    interests,
+    pronouns
   }`
 }
