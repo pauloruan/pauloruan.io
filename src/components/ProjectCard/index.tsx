@@ -6,27 +6,27 @@ import Link from "next/link"
 
 export function ProjectCard(props: Project): JSX.Element {
   const builder = urlBuilder(client)
+
   return (
-    <div className="flex flex-col justify-center items-start">
-      <div className="my-2 py-2">
-        <Link href={`/projetos/${props.slug}`} target="_self">
-          <h5 className="min-w-max md:mr-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white hover:underline decoration-2 transition duration-300 ease-in-out">
-            {props.name}
-          </h5>
-        </Link>
-        <p className="mb-2 text-gray-700 dark:text-gray-400">
-          {props.description}
-        </p>
-      </div>
+    <div className="lg:w-full w-80 h-full flex flex-col lg:flex-row items-start justify-start gap-4 rounded-md shadow-md bg-cod-gray-200 dark:bg-cod-gray-800">
       <Link href={`/projetos/${props.slug}`} target="_self">
         <Image
           src={builder.image(props.poster).url()}
-          alt={props.name}
-          width={504}
-          height={282}
-          className="rounded-2xl object-cover"
+          alt={props.title}
+          width={320}
+          height={288}
+          priority
+          className="object-cover rounded-t-md lg:rounded-r-none lg:rounded-l-md"
         />
       </Link>
+      <div className="flex flex-col flex-wrap gap-1 mx-2 w-full">
+        <h3 className="max-w-max font-sans text-xl font-semibold text-left py-1 my-1 text-cod-gray-900 dark:text-cod-gray-50">
+          {props.title}
+        </h3>
+        <p className="max-w-max font-sans text-base font-normal text-left py-1 my-2 text-cod-gray-900 dark:text-cod-gray-50">
+          {props.summary}
+        </p>
+      </div>
     </div>
   )
 }
