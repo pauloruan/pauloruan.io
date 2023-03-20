@@ -62,7 +62,7 @@ export function FormContact(): JSX.Element {
   if (formSubmitted) {
     return (
       <div className="w-full py-1 md:py-4 px-2 md:px-32 flex flex-col items-center justify-center text-center">
-        <p className="text-lg text-black dark:text-white py-2 my-2">
+        <p className="w-full h-full font-sans text-base font-normal text-cod-gray-900 dark:text-cod-gray-50">
           Sua mensagem foi enviada com sucesso!
           <br />
           Em breve entrarei em contato.
@@ -72,13 +72,13 @@ export function FormContact(): JSX.Element {
   }
 
   return (
-    <div className="w-full py-1 md:py-4 px-2 md:px-16 flex flex-col items-center justify-center">
-      <div className="w-full py-1 my-1">
-        <h4 className="text-2xl font-bold text-black dark:text-white">
+    <div className="w-full h-full py-1 md:py-4 flex flex-col items-center justify-start gap-2">
+      <div className="w-full min-h-max py-1 my-1">
+        <h3 className="max-w-max font-sans text-lg font-semibold text-left text-black dark:text-white">
           Será um prazer conversar com você!
-        </h4>
-        <p className="text-gray-600 dark:text-gray-400">
-          Preencha o formulário abaixo e entrarei em contato o mais breve.
+        </h3>
+        <p className="w-full h-full font-sans text-base font-normal text-cod-gray-900 dark:text-cod-gray-50">
+          Preencha o formulário abaixo e entrarei em contato assim que possível.
         </p>
       </div>
       <form
@@ -92,7 +92,8 @@ export function FormContact(): JSX.Element {
             type="text"
             id="name"
             {...register("name", { required: true })}
-            className="rounded-sm p-2 focus:outline-none"
+            className="rounded-sm p-2 focus:outline-none placeholder:text-cod-gray-800 dark:placeholder:text-cod-gray-200 placeholder-opacity-50 text-black dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-opacity-50 bg-cod-gray-200 dark:bg-cod-gray-800"
+            placeholder="Seu Nome"
           />
           {errors.name && (
             <span className="text-red-500">Nome é obrigatório</span>
@@ -104,7 +105,8 @@ export function FormContact(): JSX.Element {
             type="email"
             id="email"
             {...register("email", { required: true })}
-            className="rounded-sm p-2 focus:outline-none"
+            className="rounded-sm p-2 focus:outline-none placeholder:text-cod-gray-800 dark:placeholder:text-cod-gray-200 placeholder-opacity-50 text-black dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-opacity-50 bg-cod-gray-200 dark:bg-cod-gray-800"
+            placeholder="seu@email.com"
           />
           {errors.email && (
             <span className="text-red-500">E-mail é obrigatório</span>
@@ -117,7 +119,8 @@ export function FormContact(): JSX.Element {
             rows={4}
             cols={30}
             {...register("message", { required: true })}
-            className="rounded-sm p-2 focus:outline-none resize-none"
+            className="rounded-sm p-2 focus:outline-none placeholder:text-cod-gray-800 dark:placeholder:text-cod-gray-200 placeholder-opacity-50 text-black dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white focus:ring-opacity-50 bg-cod-gray-200 dark:bg-cod-gray-800"
+            placeholder="Sua mensagem aqui..."
           />
           {errors.message && (
             <span className="text-red-500">Mensagem é obrigatória</span>
