@@ -71,7 +71,9 @@ export type PageLayoutProps = {
 }
 
 export type Project = {
-  name: string
+  title: string
+  summary: string
+  date: string
   description: string
   slug: string
   repository: string
@@ -128,6 +130,8 @@ export type About = {
   image: string
   alt: string
   content: Body[]
+  interests: string
+  pronouns: string
 }
 
 export type SobreGetStaticProps = {
