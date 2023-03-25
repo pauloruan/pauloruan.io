@@ -1,9 +1,13 @@
+import { Hero } from "@components/Hero"
+import { RecentPosts } from "@components/RecentPosts"
+import { RecentProjects } from "@components/RecentProjects"
+
 export function HomeContent(): JSX.Element {
   return (
-    <div>
-      <p className="w-full text-gray-600 dark:text-gray-400 font-sans font-normal text-left py-1">
-        Bem-vindo ao meu lugar na internet. Eu construo coisas para a web.
-      </p>
+    <div className="flex flex-col flex-wrap w-full">
+      <Hero />
+      <RecentPosts />
+      <RecentProjects />
     </div>
   )
 }
