@@ -143,3 +143,19 @@ export type SobreGetStaticProps = {
 export type SobreProps = {
   about: About
 }
+
+export type Technology = {
+  order: number
+  name: string
+  slug: string
+  logo: string
+}
+
+export type HomeProps = {
+  projects: Project[]
+  posts: FormattedPost[]
+}
+
+export type HomeGetStaticProps = {
+  props: HomeProps
+}
