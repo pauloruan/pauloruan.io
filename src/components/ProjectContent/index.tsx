@@ -8,7 +8,7 @@ import { TbWorld } from "react-icons/tb"
 
 export function ProjectContent(props: ProjectContentProps): JSX.Element {
   const builder = urlBuilder(client)
-  const date = new Date(props.project.date).getFullYear().toString()
+  const date = new Date(props.project.date).getUTCFullYear()
 
   return (
     <div className="w-full h-full">
