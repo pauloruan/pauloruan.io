@@ -1,13 +1,21 @@
 name: Vercel Preview Deployment
+
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
 on:
   push:
     branches-ignore:
       - main
+  workflow_run:
+    workflows: [Unit Tests]
+    types:
+      - completed
+
 jobs:
   Deploy-Preview:
+    name: Deploy Preview
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
