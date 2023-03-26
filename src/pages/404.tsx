@@ -2,11 +2,21 @@ import { Footer } from "@components/Footer"
 import { Header } from "@components/Header"
 import { NotFoundContent } from "@components/NotFoundContent"
 import { SectionContainer } from "@components/SectionContainer"
+import { motion } from "framer-motion"
 import { NextSeo } from "next-seo"
 
 export default function NotFound(): JSX.Element {
   return (
-    <div className="bg-cod-gray-100 dark:bg-cod-gray-900 flex min-h-screen w-full flex-col items-center justify-between py-2 px-4 md:py-4 md:px-16">
+    <motion.div
+      className="bg-cod-gray-100 dark:bg-cod-gray-900 flex min-h-screen w-full flex-col items-center justify-between py-2 px-4 md:py-4 md:px-16"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        duration: 0.3,
+        delay: 0,
+        ease: "easeInOut"
+      }}
+    >
       <NextSeo
         title="Página não encontrada - Paulo Ruan"
         description="Portfólio de Paulo Ruan, desenvolvedor web e estudante de Engenharia de Software."
@@ -32,6 +42,6 @@ export default function NotFound(): JSX.Element {
         <NotFoundContent />
       </SectionContainer>
       <Footer />
-    </div>
+    </motion.div>
   )
 }

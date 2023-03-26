@@ -6,6 +6,7 @@ import { SectionContainer } from "@components/SectionContainer"
 import { client } from "@lib/sanity.client"
 import { Project, ProjectContentProps } from "@types"
 import { sanityQueries } from "@utils/sanityQueries"
+import { motion } from "framer-motion"
 import { NextSeo } from "next-seo"
 import { useRouter } from "next/router"
 
@@ -42,7 +43,16 @@ export default function Projeto(props: ProjectContentProps): JSX.Element {
   }
 
   return (
-    <div className="bg-cod-gray-100 dark:bg-cod-gray-900 flex min-h-screen w-full flex-col items-center justify-between py-2 px-4 md:py-4 md:px-16">
+    <motion.div
+      className="bg-cod-gray-100 dark:bg-cod-gray-900 flex min-h-screen w-full flex-col items-center justify-between py-2 px-4 md:py-4 md:px-16"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        duration: 0.3,
+        delay: 0,
+        ease: "easeInOut"
+      }}
+    >
       <NextSeo
         title={`${props.project.title} - Paulo Ruan`}
         description={props.project.description}
@@ -67,6 +77,6 @@ export default function Projeto(props: ProjectContentProps): JSX.Element {
         <ProjectContent project={props.project} />
       </SectionContainer>
       <Footer />
-    </div>
+    </motion.div>
   )
 }

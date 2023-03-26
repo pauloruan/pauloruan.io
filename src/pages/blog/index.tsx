@@ -7,6 +7,7 @@ import { client } from "@lib/sanity.client"
 import { BlogGetStaticProps, BlogProps, FormattedPost } from "@types"
 import { convertToBrazilianDate } from "@utils/convertToBrazilianDate"
 import { sanityQueries } from "@utils/sanityQueries"
+import { motion } from "framer-motion"
 import { NextSeo } from "next-seo"
 import * as React from "react"
 
@@ -33,7 +34,16 @@ export default function Blog(props: BlogProps): JSX.Element {
   })
 
   return (
-    <div className="bg-cod-gray-100 dark:bg-cod-gray-900 flex min-h-screen w-full flex-col items-center justify-between py-2 px-4 md:py-4 md:px-16">
+    <motion.div
+      className="bg-cod-gray-100 dark:bg-cod-gray-900 flex min-h-screen w-full flex-col items-center justify-between py-2 px-4 md:py-4 md:px-16"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        duration: 0.3,
+        delay: 0,
+        ease: "easeInOut"
+      }}
+    >
       <NextSeo
         title="Blog - Paulo Ruan"
         description="Blog de Paulo Ruan, desenvolvedor web e estudante de Engenharia de Software."
@@ -59,6 +69,6 @@ export default function Blog(props: BlogProps): JSX.Element {
         <BlogContent />
       </SectionContainer>
       <Footer />
-    </div>
+    </motion.div>
   )
 }
