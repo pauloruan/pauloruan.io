@@ -9,13 +9,15 @@ on:
     branches:
       - main
   workflow_run:
-    workflows: [Unit Tests, Deploy Preview]
+    workflows: [Unit-Tests, Deploy-Preview]
     types:
     - completed
 
 jobs:
   Deploy-Production:
+    name: Deploy Production
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v2
 
