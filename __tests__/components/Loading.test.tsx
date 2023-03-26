@@ -1,11 +1,11 @@
 import { Loading } from "@components/Loading"
 import { render, screen } from "@testing-library/react"
-import { describe, expect, test } from "vitest"
+import "@testing-library/jest-dom"
 
 describe("Loading", (): void => {
-  test("renders the loading", (): void => {
+  it("should render the loading", (): void => {
     render(<Loading />)
-    const loading = screen.getByText("Carregando...")
+    const loading = screen.getByText("Carregando...", { exact: true })
 
     expect(loading).toBeDefined()
   })

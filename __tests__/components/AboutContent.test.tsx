@@ -1,10 +1,10 @@
 import { AboutContent } from "@components/AboutContent"
-import mock from "@mocks/aboutContent.mock"
+import mock from "@mocks/about.mock"
 import { render, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
 
 describe("AboutContent", () => {
-  it("should render the component", () => {
+  it("should render the AboutContent component", () => {
     render(<AboutContent {...mock} />)
 
     const title = screen.getByText(mock.title)
