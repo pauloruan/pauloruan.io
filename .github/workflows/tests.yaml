@@ -23,12 +23,4 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm test --ci
-        env:
-          CI: true
-          NEXT_PUBLIC_SANITY_API_VERSION: ${{ github.env.NEXT_PUBLIC_SANITY_API_VERSION }}
-          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ github.env.NEXT_PUBLIC_SANITY_PROJECT_ID }}
-          NEXT_PUBLIC_SANITY_DATASET: ${{ github.env.NEXT_PUBLIC_SANITY_DATASET }}
-          projectId: $NEXTPUBLIC_SANITY_PROJECT_ID
-          dataset: $NEXTPUBLIC_SANITY_DATASET
-          apiVersion: $NEXTPUBLIC_SANITY_API_VERSION
+        run: npm test
