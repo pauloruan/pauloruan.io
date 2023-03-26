@@ -24,3 +24,8 @@ jobs:
 
       - name: Run tests
         run: npm test
+        env:
+          CI: true
+          NEXT_PUBLIC_SANITY_API_VERSION: ${{ github.env.NEXT_PUBLIC_SANITY_API_VERSION }}
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ github.env.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ github.env.NEXT_PUBLIC_SANITY_DATASET }}
