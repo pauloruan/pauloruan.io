@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  CI: true
+  NEXT_PUBLIC_SANITY_API_VERSION: ${{ vars.NEXT_PUBLIC_SANITY_API_VERSION }}
+  NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+  NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET }}
+
 jobs:
   test:
     name: Unit Tests
@@ -13,6 +19,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PAULORUAN_IO }}
 
       - name: Using Node.js
         uses: actions/setup-node@v2
@@ -24,8 +33,4 @@ jobs:
 
       - name: Run tests
         run: npm test
-        env:
-          CI: true
-          NEXT_PUBLIC_SANITY_API_VERSION: ${{ env.NEXT_PUBLIC_SANITY_API_VERSION }}
-          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ env.NEXT_PUBLIC_SANITY_PROJECT_ID }}
-          NEXT_PUBLIC_SANITY_DATASET: ${{ env.NEXT_PUBLIC_SANITY_DATASET }}
+
