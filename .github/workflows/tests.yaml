@@ -13,9 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          repository: 'pauloruan/pauloruan.io'
-          token: ${{ secrets.PAULORUAN_IO }}
 
       - name: Using Node.js
         uses: actions/setup-node@v2
@@ -32,3 +29,6 @@ jobs:
           NEXT_PUBLIC_SANITY_API_VERSION: ${{ github.env.NEXT_PUBLIC_SANITY_API_VERSION }}
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ github.env.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ github.env.NEXT_PUBLIC_SANITY_DATASET }}
+          projectId: $NEXTPUBLIC_SANITY_PROJECT_ID
+          dataset: $NEXTPUBLIC_SANITY_DATASET
+          apiVersion: $NEXTPUBLIC_SANITY_API_VERSION
