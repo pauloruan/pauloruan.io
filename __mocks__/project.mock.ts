@@ -10,5 +10,6 @@ export default {
   website: "https://pauloruan.vercel.app",
   poster: "image-1f9dbf48cec378caa3c23908cf797a86e8422e00-460x460-jpg",
   images: [],
-  technologies: ["TypeScript", "Next.js"]
+  technologies: ["TypeScript", "Next.js"],
+  published: true
 } as Project
