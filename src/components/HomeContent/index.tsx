@@ -1,13 +1,11 @@
 import { Hero } from "@components/Hero"
-import { RecentPosts } from "@components/RecentPosts"
-import { RecentProjects } from "@components/RecentProjects"
+import { RecentGrid } from "@components/RecentGrid"
 
 export function HomeContent(): JSX.Element {
   return (
-    <div className="flex flex-col flex-wrap w-full">
+    <div className="flex flex-col flex-wrap w-full justify-center items-center">
       <Hero />
-      <RecentPosts />
-      <RecentProjects />
+      <RecentGrid />
     </div>
   )
 }
