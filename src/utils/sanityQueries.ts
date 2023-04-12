@@ -50,7 +50,7 @@ export const sanityQueries = {
     published,
     "technologies": technologies[] -> slug.current
   }`,
-  projectSlug: `*[_type == "project"]{
+  projectSlug: `*[_type == "project" && published == true]{
     "slug": slug.current
   }`,
   about: `*[_type == 'about'] {
