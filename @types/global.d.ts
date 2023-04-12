@@ -81,6 +81,7 @@ export type Project = {
   poster: string
   images: ProjectImage[]
   technologies: string[]
+  published: boolean
 }
 
 export type ProjectImage = {
@@ -158,4 +159,11 @@ export type HomeProps = {
 
 export type HomeGetStaticProps = {
   props: HomeProps
+}
+
+export type RecentCardProps = {
+  title: string
+  subtitle?: string
+  summary?: string
+  href: string
 }
