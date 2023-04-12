@@ -1,21 +1,25 @@
-import { PostCard } from "@components/PostCard"
+import { RecentCard } from "@components/RecentCard"
 import { GlobalContext } from "@contexts/GlobalContext"
 import * as React from "react"
 
 export function RecentPosts(): JSX.Element {
   const { posts } = React.useContext(GlobalContext)
   return (
-    <div className="w-full flex flex-col flex-wrap my-8">
-      <div className="w-full flex my-4 flex-col lg:flex-row items-start lg:items-center lg:justify-between border-b border-b-cod-gray-200 dark:border-b-cod-gray-800">
-        <h2 className="max-w-max h-full font-sans text-2xl font-bold text-left py-1 my-1 text-cod-gray-900 dark:text-cod-gray-50">
-          Últimos textos que escrevi
+    <div className="w-full flex flex-col flex-wrap my-2 lg:my-4">
+      <div className="w-full flex my-1 flex-col items-start">
+        <h2 className="max-w-max h-full font-sans text-lg font-bold text-left text-cod-gray-900 dark:text-cod-gray-50">
+          Textos
         </h2>
       </div>
-      <div className="w-full grid grid-cols-1 gap-10 my-2 py-2">
+      <div className="w-full grid grid-cols-1 gap-4 my-1">
         {posts
-          .filter((_, index) => index < 5)
+          .filter((post, index) => post.published && index < 3)
           .map((post) => (
-            <PostCard key={post.title} {...post} />
+            <RecentCard
+              key={post.title}
+              href={`/blog/${post.slug}`}
+              {...post}
+            />
           ))}
       </div>
     </div>
