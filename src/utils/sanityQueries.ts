@@ -34,6 +34,7 @@ export const sanityQueries = {
     website,
     "poster": poster.asset._ref,
     images,
+    published,
     "technologies": technologies[] -> slug.current
   }`,
   projectBySlug: `*[_type == "project" && slug.current == $slug] {
@@ -46,6 +47,7 @@ export const sanityQueries = {
     website,
     "poster": poster.asset._ref,
     images,
+    published,
     "technologies": technologies[] -> slug.current
   }`,
   projectSlug: `*[_type == "project"]{
