@@ -6,13 +6,17 @@ interface GlobalContextProps {
   setPosts: React.Dispatch<React.SetStateAction<FormattedPost[]>>
   projects: Project[]
   setProjects: React.Dispatch<React.SetStateAction<Project[]>>
+  searchValue: string
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>
 }
 
 const DEFAULT_VALUE = {
   posts: [],
   setPosts: () => {},
   projects: [],
-  setProjects: () => {}
+  setProjects: () => {},
+  searchValue: "",
+  setSearchValue: () => {}
 }
 
 export const GlobalContext =
@@ -25,15 +29,18 @@ export function GlobalProvider({
 }): JSX.Element {
   const [posts, setPosts] = React.useState<FormattedPost[]>([])
   const [projects, setProjects] = React.useState<Project[]>([])
+  const [searchValue, setSearchValue] = React.useState("")
 
   const memoizedValue = React.useMemo(
     () => ({
       posts,
       setPosts,
       projects,
-      setProjects
+      setProjects,
+      searchValue,
+      setSearchValue
     }),
-    [posts, projects]
+    [posts, projects, searchValue]
   )
 
   return (
