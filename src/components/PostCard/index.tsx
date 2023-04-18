@@ -1,19 +1,29 @@
 import { FormattedPost } from "@types"
-import { readingTime } from "@utils/readTime"
 import Link from "next/link"
 
 export function PostCard(props: FormattedPost): JSX.Element {
+  const { slug, title, subtitle, categories } = props
   return (
     <Link
-      href={`/blog/${props.slug}`}
-      className="lg:w-full w-80 px-1 h-full flex flex-col lg:flex-row justify-start items-start lg:justify-between lg:items-center rounded-md shadow-md bg-cod-gray-200 dark:bg-cod-gray-800"
+      href={`/blog/${slug}`}
+      className="w-full h-full flex flex-col justify-center items-start"
     >
-      <h3 className="max-w-max font-sans text-lg font-semibold py-1 my-2 text-black dark:text-white">
-        {props.title}
+      <h3 className="max-w-max font-sans text-lg font-semibold my-1 text-black dark:text-white hover:opacity-70 transition-all duration-300">
+        {title}
       </h3>
-      <p className="max-w-max h-full flex flex-row justify-center items-center font-sans text-sm font-normal py-1 text-cod-gray-900 dark:text-cod-gray-50">
-        {readingTime(props.body)} • {props.date}
-      </p>
+      <div className="flex flex-row flex-wrap justify-start items-center space-x-2">
+        {categories.map((category) => (
+          <span
+            key={category}
+            className="max-w-max font-code text-xs font-semibold py-1 px-2 my-2 rounded-md uppercase text-black dark:text-white bg-cod-gray-200 dark:bg-cod-gray-800"
+          >
+            {category}
+          </span>
+        ))}
+      </div>
+      <h4 className="max-w-max font-sans text-sm font-normal my-1 text-cod-gray-900 dark:text-cod-gray-50">
+        {subtitle}
+      </h4>
     </Link>
   )
 }
