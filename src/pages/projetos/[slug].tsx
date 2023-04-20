@@ -65,7 +65,7 @@ export default function Projeto(props: ProjectContentProps): JSX.Element {
             {
               url: "https://pauloruan.vercel.app/og-image.png",
               width: 1200,
-              height: 630,
+              height: 628,
               alt: `${props.project.title} - Paulo Ruan`
             }
           ],

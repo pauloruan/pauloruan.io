@@ -14,8 +14,8 @@ export const SEO: DefaultSeoProps = {
     images: [
       {
         url: "https://pauloruan.vercel.app/og-image.png",
-        width: 1280,
-        height: 720,
+        width: 1200,
+        height: 628,
         alt: "Paulo Ruan - Site pessoal de Paulo Ruan"
       }
     ]

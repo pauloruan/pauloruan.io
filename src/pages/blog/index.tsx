@@ -57,7 +57,7 @@ export default function Blog(props: BlogProps): JSX.Element {
             {
               url: "https://pauloruan.vercel.app/og-image.png",
               width: 1200,
-              height: 630,
+              height: 628,
               alt: "Blog - Paulo Ruan"
             }
           ],

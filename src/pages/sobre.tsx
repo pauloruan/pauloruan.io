@@ -41,7 +41,7 @@ export default function Sobre(props: SobreProps): JSX.Element {
             {
               url: "https://pauloruan.vercel.app/og-image.png",
               width: 1200,
-              height: 630,
+              height: 628,
               alt: "Sobre Mim - Paulo Ruan"
             }
           ],

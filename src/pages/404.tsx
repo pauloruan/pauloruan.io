@@ -30,7 +30,7 @@ export default function NotFound(): JSX.Element {
             {
               url: "https://pauloruan.vercel.app/og-image.png",
               width: 1200,
-              height: 630,
+              height: 628,
               alt: "Página não encontrada - Paulo Ruan"
             }
           ],

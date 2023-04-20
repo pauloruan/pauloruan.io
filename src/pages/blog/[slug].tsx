@@ -67,7 +67,7 @@ export default function Post(props: PostProps): JSX.Element {
             {
               url: "https://pauloruan.vercel.app/og-image.png",
               width: 1200,
-              height: 630,
+              height: 628,
               alt: `${props.post.title} - Paulo Ruan`
             }
           ],
