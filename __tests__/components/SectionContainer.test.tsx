@@ -1,6 +1,6 @@
 import { SectionContainer } from "@components/SectionContainer"
-import { render, screen } from "@testing-library/react"
 import "@testing-library/jest-dom"
+import { render, screen } from "@testing-library/react"
 
 describe("SectionContainer", (): void => {
   it("should render the section container", (): void => {

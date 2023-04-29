@@ -5,9 +5,7 @@ import { render, screen } from "@testing-library/react"
 
 describe("PostCard", (): void => {
   it("should render the post card", (): void => {
-    const { debug } = render(<PostCard {...mock} />)
-
-    debug()
+    render(<PostCard {...mock} />)
 
     const title = screen.getByRole("heading", { name: mock.title, level: 3 })
     const subtitle = screen.getByRole("heading", {
