@@ -9,7 +9,7 @@ on:
     branches-ignore:
       - main
   workflow_run:
-    workflows: [Unit-Tests]
+    workflows: [Tests Workflow]
     types:
       - completed
 
