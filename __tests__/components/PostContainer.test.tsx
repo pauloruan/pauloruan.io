@@ -1,7 +1,7 @@
 import { PostContainer } from "@components/PostContainer"
-import { render, screen } from "@testing-library/react"
-import "@testing-library/jest-dom"
 import mock from "@mocks/post.mock"
+import "@testing-library/jest-dom"
+import { render, screen } from "@testing-library/react"
 
 describe("PostContainer", (): void => {
   it("should render the post container", (): void => {
