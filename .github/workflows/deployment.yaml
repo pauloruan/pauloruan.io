@@ -9,7 +9,7 @@ on:
     branches:
       - main
   workflow_run:
-    workflows: [Tests Workflow, Vercel Preview Deployment]
+    workflows: [Tests, Vercel Preview Deployment]
     types:
     - completed
 
