@@ -11,7 +11,7 @@ on:
   workflow_run:
     workflows: [Tests, Vercel Preview Deployment]
     types:
-    - completed
+      - completed
 
 jobs:
   Deploy-Production:

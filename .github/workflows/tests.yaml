@@ -6,13 +6,11 @@ env:
   NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
   NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET }}
 
-
 on:
   push:
-    branches: [ '*' ]
+    branches: ["*"]
   pull_request:
-    branches: [ main ]
-
+    branches: [main]
 
 jobs:
   Unit-Tests:
