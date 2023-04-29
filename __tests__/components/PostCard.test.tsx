@@ -5,12 +5,17 @@ import { render, screen } from "@testing-library/react"
 
 describe("PostCard", (): void => {
   it("should render the post card", (): void => {
-    render(<PostCard {...mock} />)
+    const { debug } = render(<PostCard {...mock} />)
 
-    const title = screen.getByRole("heading", { name: mock.title })
-    const date = screen.getByText(`1 min de leitura • ${mock.date}`)
+    debug()
+
+    const title = screen.getByRole("heading", { name: mock.title, level: 3 })
+    const subtitle = screen.getByRole("heading", {
+      name: mock.subtitle,
+      level: 4
+    })
 
     expect(title).toBeDefined()
-    expect(date).toBeDefined()
+    expect(subtitle).toBeDefined()
   })
 })
