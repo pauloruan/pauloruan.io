@@ -1,20 +1,16 @@
 import { components } from "@components/PostContainer"
-import { client } from "@lib/sanity.client"
 import { PortableText } from "@portabletext/react"
-import urlBuilder from "@sanity/image-url"
 import { About } from "@types"
 import Image from "next/image"
 import * as Icon from "react-icons/md"
 
 export function AboutContent(props: About): JSX.Element {
-  const builder = urlBuilder(client)
-
   return (
     <div className="w-full h-full flex flex-col items-start justify-start my-4">
       <div className="h-full min-w-fit flex flex-col-reverse text-center justify-center items-start md:items-center mb-4 md:flex-row">
         <Image
           aria-label="Profile Picture"
-          src={builder.image(props.image).url()}
+          src="https://avatars.githubusercontent.com/u/85769241?v=4"
           alt={props.alt}
           width={192}
           height={192}
