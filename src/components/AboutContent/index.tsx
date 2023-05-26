@@ -1,55 +1,51 @@
 import { components } from "@components/PostContainer"
 import { PortableText } from "@portabletext/react"
+import { EnvelopeClosedIcon, LinkedInLogoIcon } from "@radix-ui/react-icons"
 import { About } from "@types"
-import Image from "next/image"
-import * as Icon from "react-icons/md"
+import Link from "next/link"
 
 export function AboutContent(props: About): JSX.Element {
   return (
-    <div className="w-full h-full flex flex-col items-start justify-start my-4">
-      <div className="h-full min-w-fit flex flex-col-reverse text-center justify-center items-start md:items-center mb-4 md:flex-row">
-        <Image
-          aria-label="Profile Picture"
-          src="https://avatars.githubusercontent.com/u/85769241?v=4"
-          alt={props.alt}
-          width={192}
-          height={192}
-          priority
-          className="rounded-md md:mr-4 my-4"
-        />
-        <div className="flex flex-col items-start justify-start text-start">
-          <h3 className="text-3xl font-bold text-black dark:text-white font-sans my-2 py-1">
-            TL;DR
-          </h3>
-          <ul className="flex flex-col justify-start items-start my-4 md:my-0 mx-2 md:mx-0">
-            <li className="max-w-max font-sans text-sm font-normal text-left text-cod-gray-800 dark:text-cod-gray-200 flex justify-start items-center capitalize py-1">
-              <Icon.MdPerson className="mr-2 h-4 w-4 dark:text-white text-black" />
-              {props.title}
-            </li>
-            <li className="max-w-max font-sans text-sm font-normal text-left text-cod-gray-800 dark:text-cod-gray-200 flex justify-start items-center capitalize py-1">
-              <Icon.MdMale className="mr-2 h-4 w-4 dark:text-white text-black" />
-              {props.pronouns}
-            </li>
-            <li className="max-w-max font-sans text-sm font-normal text-left text-cod-gray-800 dark:text-cod-gray-200 flex justify-start items-center capitalize py-1">
-              <Icon.MdLocationOn className="mr-2 h-4 w-4 dark:text-white text-black" />
-              {props.location}
-            </li>
-            <li className="max-w-max font-sans text-sm font-normal text-left text-cod-gray-800 dark:text-cod-gray-200 flex justify-start items-center capitalize py-1">
-              <Icon.MdWork className="mr-2 h-4 w-4 dark:text-white text-black" />
-              {props.occupation}
-            </li>
-            <li className="max-w-max font-sans text-sm font-normal text-left text-cod-gray-800 dark:text-cod-gray-200 flex justify-start items-center py-1">
-              <Icon.MdInterests className="mr-2 h-4 w-4 dark:text-white text-black" />
-              {props.interests}
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div className="w-full h-full flex flex-col items-start justify-start my-4 gap-12">
       <PortableText
         aria-label="About"
         value={props.content}
         components={components}
       ></PortableText>
+      <div>
+        <h3 className="text-3xl font-bold text-black dark:text-white font-sans my-2 py-1">
+          Contato
+        </h3>
+        <p className="text-base font-normal text-cod-gray-900 dark:text-cod-gray-50">
+          Estou sempre aberto para conversar, conectar-me com novas pessoas e
+          explorar novas oportunidades.
+        </p>
+        <p className="text-base font-normal text-cod-gray-900 dark:text-cod-gray-50">
+          Se você tem um projeto ou ideia em mente onde eu posso contribuir, não
+          hesite em me contatar!
+        </p>
+        <p className="text-base font-normal text-cod-gray-900 dark:text-cod-gray-50">
+          Existem algumas maneiras pelas quais você pode entrar em contato:
+        </p>
+        <div className="flex flex-row justify-between items-center my-4 w-48">
+          <Link
+            href="mailto:ruanpr182@gmail.com?subject=Olá, PR!"
+            target="_blank"
+            className="text-sm font-sans text-black dark:text-white h-8 max-w-max px-2 bg-cod-gray-200 dark:bg-cod-gray-800 rounded-md flex justify-center items-center gap-2 hover:scale-105 transition-all duration-300"
+          >
+            <EnvelopeClosedIcon className="h-4 w-4" />
+            Email
+          </Link>
+          <Link
+            href="https://linkedin.com/in/pauloruan/"
+            target="_blank"
+            className="text-sm font-sans text-black dark:text-white h-8 max-w-max px-2 bg-cod-gray-200 dark:bg-cod-gray-800 rounded-md flex justify-center items-center gap-2 hover:scale-105 transition-all duration-300"
+          >
+            <LinkedInLogoIcon className="h-4 w-4" />
+            LinkedIn
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }
