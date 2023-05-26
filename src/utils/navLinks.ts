@@ -6,10 +6,6 @@ export const navLinks: NavLink[] = [
     path: "/sobre"
   },
   {
-    name: "Projetos",
-    path: "/projetos"
-  },
-  {
     name: "Blog",
     path: "/blog"
   }
