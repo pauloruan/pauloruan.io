@@ -31,7 +31,7 @@ export const components: Partial<PortableTextReactComponents> = {
 export function PostContainer(props: PostProps): JSX.Element {
   const { title, authorName, date, body } = props.post
   return (
-    <section className="box-border w-full md:w-[80vw] min-h-[50vh] flex flex-col items-start justify-center my-1 md:my-4 px-1 sm:px-8 md:px-24 lg:px-36">
+    <section className="box-border w-full h-full flex flex-col items-start justify-center">
       <div className="w-full flex flex-col my-2 py-4 rounded-md justify-center items-center text-center text-black dark:text-white bg-cod-gray-200 dark:bg-cod-gray-800">
         <h1 className="max-w-max h-full font-sans text-4xl font-black text-center my-1 py-1 text-black dark:text-white">
           {title}
