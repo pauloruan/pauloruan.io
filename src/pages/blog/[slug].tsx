@@ -1,13 +1,13 @@
+import { Animation } from "@components/Animation"
 import { Footer } from "@components/Footer"
 import { Header } from "@components/Header"
 import { Loading } from "@components/Loading"
 import { PostContainer } from "@components/PostContainer"
+import { SectionContainer } from "@components/SectionContainer"
 import { client } from "@lib/sanity.client"
 import { FormattedPost, PostProps } from "@types"
 import { convertToBrazilianDate } from "@utils/convertToBrazilianDate"
 import { sanityQueries } from "@utils/sanityQueries"
-import { motion } from "framer-motion"
-import { NextSeo } from "next-seo"
 import { useRouter } from "next/router"
 
 export async function getStaticProps(context: any) {
@@ -45,38 +45,14 @@ export default function Post(props: PostProps): JSX.Element {
   }
 
   return (
-    <motion.div
-      className="bg-cod-gray-100 dark:bg-cod-gray-900 flex min-h-screen w-full flex-col items-center justify-between py-2 px-4 md:py-4 md:px-16"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{
-        duration: 0.3,
-        delay: 0,
-        ease: "easeInOut"
-      }}
-    >
-      <NextSeo
-        title={`${props.post.title} - Paulo Ruan`}
-        description={props.post.subtitle}
-        canonical={`https://pauloruan.vercel.app/blog/${props.post.slug}`}
-        openGraph={{
-          url: `https://pauloruan.vercel.app/blog/${props.post.slug}`,
-          title: `${props.post.title} - Paulo Ruan`,
-          description: props.post.subtitle,
-          images: [
-            {
-              url: "https://pauloruan.vercel.app/og-image.png",
-              width: 1200,
-              height: 628,
-              alt: `${props.post.title} - Paulo Ruan`
-            }
-          ],
-          site_name: `${props.post.title} - Paulo Ruan`
-        }}
-      />
-      <Header />
-      <PostContainer post={props.post} />
-      <Footer />
-    </motion.div>
+    <main className="min-h-screen w-full bg-cod-gray-100 dark:bg-cod-gray-900">
+      <Animation>
+        <Header />
+        <SectionContainer>
+          <PostContainer post={props.post} />
+        </SectionContainer>
+        <Footer />
+      </Animation>
+    </main>
   )
 }
