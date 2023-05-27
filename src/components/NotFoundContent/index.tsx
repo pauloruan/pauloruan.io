@@ -1,6 +1,6 @@
+import { ArrowLeftIcon } from "@radix-ui/react-icons"
 import Image from "next/image"
 import Link from "next/link"
-import { RiArrowLeftUpLine } from "react-icons/ri"
 
 export function NotFoundContent(): JSX.Element {
   return (
@@ -8,10 +8,13 @@ export function NotFoundContent(): JSX.Element {
       <p className="text-black dark:text-white font-normal text-sm text-start md:text-base my-2 py-1">
         <Link
           href="/"
-          className="flex flex-row items-center text-center no-underline hover:underline decoration-2 transition duration-300 ease-in-out text-black dark:text-white"
+          className="flex flex-row items-center text-center no-underline decoration-2 transition duration-300 ease-in-out text-black dark:text-white"
         >
-          <RiArrowLeftUpLine className="mr-1" /> Voltar para a&nbsp;
-          <strong>página inicial.</strong>
+          <ArrowLeftIcon className="mr-1" /> Voltar para a&nbsp;
+          <strong className="no-underline hover:underline">
+            página inicial
+          </strong>
+          .
         </Link>
       </p>
       <Image
@@ -19,6 +22,7 @@ export function NotFoundContent(): JSX.Element {
         alt="404"
         width={500}
         height={500}
+        className="object-contain object-center w-full h-full"
       />
     </div>
   )
