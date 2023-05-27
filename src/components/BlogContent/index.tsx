@@ -15,7 +15,7 @@ export function BlogContent(): JSX.Element {
     : posts
 
   return (
-    <div className="w-full flex flex-col justify-between items-start min-h-[280px]">
+    <div className="w-full h-full flex flex-col justify-between items-start min-h-[280px]">
       <SearchPost />
       {filteredPosts.length === 0 && <NoPosts />}
       {filteredPosts.length > 0 && <PostsList posts={filteredPosts} />}
