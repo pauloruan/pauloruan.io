@@ -21,7 +21,7 @@
     "baseUrl": ".",
     "paths": {
       "@types": [
-        "./@types/global.d.ts"
+        "types/global.d.ts"
       ],
       "@components/*": [
         "src/components/*"
@@ -49,15 +49,25 @@
       ],
       "@mocks/*": [
         "./__mocks__/*"
-      ],
-    }
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "types/global.d.ts"
   ],
   "exclude": [
     "node_modules"
+  ],
+  "typeRoots": [
+    "./types/global.d.ts"
   ]
 }
