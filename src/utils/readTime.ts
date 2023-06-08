@@ -1,6 +1,4 @@
-import type { Body } from "@types"
-
-export function countWords(blocks: Body[]): number[][] {
+export function countWords(blocks: BodyContent[]): number[][] {
   const words = blocks.map((block) => {
     return block.children.map((child) => {
       return child.text.split(" ").length
@@ -9,7 +7,7 @@ export function countWords(blocks: Body[]): number[][] {
   return words
 }
 
-export function readingTime(blocks: Body[]): string {
+export function readingTime(blocks: BodyContent[]): string {
   const words = countWords(blocks)
   const wordsPerMinute = 225
   const totalWords = words.flat().reduce((acc, curr) => acc + curr)
