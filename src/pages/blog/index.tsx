@@ -6,7 +6,7 @@ import { GlobalContext } from "@contexts/GlobalContext"
 import { client } from "@lib/sanity.client"
 import { sanityQueries } from "@utils/sanityQueries"
 import * as React from "react"
-import { BlogContent } from "./components/BlogContent"
+import { BlogContent } from "@components/BlogContent"
 
 export async function getStaticProps(): Promise<BlogGetStaticProps> {
   const posts = await client.fetch(sanityQueries.posts)

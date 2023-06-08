@@ -4,7 +4,7 @@ import { Header } from "@components/Header"
 import { SectionContainer } from "@components/SectionContainer"
 import { client } from "@lib/sanity.client"
 import { sanityQueries } from "@utils/sanityQueries"
-import { AboutContent } from "./components/AboutContent"
+import { AboutContent } from "@components/AboutContent"
 
 export async function getStaticProps(): Promise<SobreGetStaticProps> {
   const [about] = await client.fetch(sanityQueries.about)
