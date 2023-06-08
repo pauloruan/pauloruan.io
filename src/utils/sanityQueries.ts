@@ -60,6 +60,7 @@ export const sanityQueries = {
     "image": image.asset._ref,
     "alt": attribution,
     content,
+    contact,
     interests,
     pronouns
   }`
