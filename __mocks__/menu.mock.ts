@@ -1,5 +1,3 @@
-import { NavLink } from "@types"
-
 export default [
   {
     name: "Test",

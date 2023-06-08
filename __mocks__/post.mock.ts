@@ -1,5 +1,3 @@
-import { FormattedPost } from "@types"
-
 export default {
   authorImage: "image-1f9dbf48cec378caa3c23908cf797a86e8422e00-460x460-jpg",
   authorName: "Paulo Ruan",
@@ -25,4 +23,4 @@ export default {
   slug: "my-first-test",
   subtitle: "Subtitle Test",
   title: "Post Title"
-} as FormattedPost
+} as Post
