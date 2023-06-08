@@ -1,11 +1,8 @@
-import type { FormattedPost, Project } from "@types"
 import * as React from "react"
 
 interface GlobalContextProps {
-  posts: FormattedPost[]
-  setPosts: React.Dispatch<React.SetStateAction<FormattedPost[]>>
-  projects: Project[]
-  setProjects: React.Dispatch<React.SetStateAction<Project[]>>
+  posts: Post[]
+  setPosts: React.Dispatch<React.SetStateAction<Post[]>>
   searchValue: string
   setSearchValue: React.Dispatch<React.SetStateAction<string>>
 }
@@ -13,8 +10,6 @@ interface GlobalContextProps {
 const DEFAULT_VALUE = {
   posts: [],
   setPosts: () => {},
-  projects: [],
-  setProjects: () => {},
   searchValue: "",
   setSearchValue: () => {}
 }
@@ -22,25 +17,18 @@ const DEFAULT_VALUE = {
 export const GlobalContext =
   React.createContext<GlobalContextProps>(DEFAULT_VALUE)
 
-export function GlobalProvider({
-  children
-}: {
-  children: React.ReactNode
-}): JSX.Element {
-  const [posts, setPosts] = React.useState<FormattedPost[]>([])
-  const [projects, setProjects] = React.useState<Project[]>([])
+export function GlobalProvider({ children }: GlobalProviderProps): JSX.Element {
+  const [posts, setPosts] = React.useState<Post[]>([])
   const [searchValue, setSearchValue] = React.useState("")
 
   const memoizedValue = React.useMemo(
     () => ({
       posts,
       setPosts,
-      projects,
-      setProjects,
       searchValue,
       setSearchValue
     }),
-    [posts, projects, searchValue]
+    [posts, searchValue]
   )
 
   return (

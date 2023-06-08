@@ -1,8 +1,8 @@
 import { Animation } from "@components/Animation"
 import { Footer } from "@components/Footer"
 import { Header } from "@components/Header"
-import { NotFoundContent } from "@components/NotFoundContent"
 import { SectionContainer } from "@components/SectionContainer"
+import { NotFoundContent } from "./components/NotFoundContent"
 
 export default function NotFound(): JSX.Element {
   return (

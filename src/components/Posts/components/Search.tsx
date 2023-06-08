@@ -2,7 +2,7 @@ import { GlobalContext } from "@contexts/GlobalContext"
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import { useContext } from "react"
 
-export function SearchPost(): JSX.Element {
+export function Search(): JSX.Element {
   const { setSearchValue, searchValue } = useContext(GlobalContext)
 
   function handleSearch(event: React.ChangeEvent<HTMLInputElement>) {

@@ -11,6 +11,7 @@ export function LogoLink(): JSX.Element {
   return (
     <Link
       href="/"
+      target="_self"
       className={`text-xl tracking-tighter font-code font-bold uppercase ${pathStyle}`}
     >
       PR.

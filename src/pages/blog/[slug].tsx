@@ -5,18 +5,13 @@ import { Loading } from "@components/Loading"
 import { PostContainer } from "@components/PostContainer"
 import { SectionContainer } from "@components/SectionContainer"
 import { client } from "@lib/sanity.client"
-import { FormattedPost, PostProps } from "@types"
-import { convertToBrazilianDate } from "@utils/convertToBrazilianDate"
 import { sanityQueries } from "@utils/sanityQueries"
 import { useRouter } from "next/router"
 
 export async function getStaticProps(context: any) {
   const { slug } = context.params
-  const [postBySlug] = await client.fetch(sanityQueries.postBySlug, { slug })
-  const post = {
-    ...postBySlug,
-    date: convertToBrazilianDate(postBySlug.date)
-  }
+  const [post] = await client.fetch(sanityQueries.postBySlug, { slug })
+
   return {
     props: {
       post
@@ -27,7 +22,7 @@ export async function getStaticProps(context: any) {
 export async function getStaticPaths() {
   const slugs = await client.fetch(sanityQueries.postSlugs)
 
-  const paths = slugs.map((post: FormattedPost) => ({
+  const paths = slugs.map((post: Post) => ({
     params: { slug: post.slug }
   }))
 
@@ -37,7 +32,7 @@ export async function getStaticPaths() {
   }
 }
 
-export default function Post(props: PostProps): JSX.Element {
+export default function Post({ post }: PostProps): JSX.Element {
   const router = useRouter()
 
   if (router.isFallback) {
@@ -49,7 +44,7 @@ export default function Post(props: PostProps): JSX.Element {
       <Animation>
         <Header />
         <SectionContainer>
-          <PostContainer post={props.post} />
+          <PostContainer post={post} />
         </SectionContainer>
         <Footer />
       </Animation>

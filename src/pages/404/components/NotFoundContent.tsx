@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function NotFoundContent(): JSX.Element {
   return (
-    <div className="flex flex-col items-start justify-center w-full h-full">
+    <div className="flex flex-col items-start justify-center w-full h-full gap-4">
       <p className="text-black dark:text-white font-normal text-sm text-start md:text-base my-2 py-1">
         <Link
           href="/"
@@ -19,9 +19,11 @@ export function NotFoundContent(): JSX.Element {
       </p>
       <Image
         src="https://media.giphy.com/media/JuFwy0zPzd6jC/giphy.gif"
-        alt="404"
+        alt="Gif de um gato andando em cima de um teclado de computador"
         width={500}
         height={500}
+        loading="eager"
+        priority
         className="object-contain object-center w-full h-full"
       />
     </div>

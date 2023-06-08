@@ -1,9 +1,5 @@
 import { motion } from "framer-motion"
 
-export type AnimationProps = {
-  children: React.ReactNode
-}
-
 export function Animation({ children }: AnimationProps): JSX.Element {
   return (
     <motion.div

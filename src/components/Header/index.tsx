@@ -1,16 +1,20 @@
 import { ButtonToggleTheme } from "@components/ButtonToggleTheme"
-import { LogoLink } from "@components/LogoLink"
+import { LogoLink } from "../LogoLink"
 import { Menu } from "@components/Menu"
 import { navLinks } from "@utils/navLinks"
 
 export function Header(): JSX.Element {
   return (
-    <header className="box-border w-full max-w-[666px] mx-auto h-12 flex flex-row flex-nowrap items-center justify-between px-4 py-2">
+    <header className="box-border w-[96%] max-w-[666px] mx-auto h-12 flex flex-row flex-nowrap items-center justify-between px-4 py-2 my-2 shadow-md rounded-md bg-cod-gray-200 dark:bg-cod-gray-800">
       <LogoLink />
-      <Menu links={navLinks} />
-      <div className="flex flex-row justify-between items-center text-center gap-2">
+      <Menu.Container>
+        {navLinks.map((link: NavLink) => (
+          <Menu.Item key={link.path} {...link} />
+        ))}
+      </Menu.Container>
+      <Menu.Buttons>
         <ButtonToggleTheme />
-      </div>
+      </Menu.Buttons>
     </header>
   )
 }

@@ -1,12 +1,14 @@
-import { Switch } from "@headlessui/react"
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 
 export function ButtonToggleTheme(): JSX.Element {
+  const [currentTheme, setCurrentTheme] = useState<string | undefined>("")
   const { theme, setTheme, systemTheme } = useTheme()
-  const currentTheme = theme === "system" ? systemTheme : theme
-  const spanIsDark = "md:translate-x-6 translate-x-4 bg-black"
-  const spanIsWhite = "translate-x-1 bg-white"
-  const styleSpan = currentTheme === "dark" ? spanIsDark : spanIsWhite
+
+  useEffect(() => {
+    setCurrentTheme(theme === "system" ? systemTheme : theme)
+  }, [systemTheme, theme])
 
   function handleTheme(): void {
     if (currentTheme === "dark") {
@@ -17,19 +19,18 @@ export function ButtonToggleTheme(): JSX.Element {
   }
 
   return (
-    <Switch.Group>
-      <div className="flex items-center">
-        <Switch.Label className="sr-only">Tema</Switch.Label>
-        <Switch
-          checked={currentTheme === theme}
-          onChange={handleTheme}
-          className="relative inline-flex h-4 w-8 md:h-6 md:w-11 items-center rounded-full transition-colors ease-in-out duration-200 bg-gray-600 dark:bg-gray-400"
-        >
-          <span
-            className={`inline-block h-3 w-3 md:h-4 md:w-4 transform rounded-full transition ${styleSpan}`}
-          />
-        </Switch>
-      </div>
-    </Switch.Group>
+    <button
+      type="button"
+      onClick={handleTheme}
+      title="Alterar tema"
+      aria-label="Alterar tema"
+      className="flex items-center justify-center w-8 h-8 md:w-11 md:h-11"
+    >
+      {currentTheme === "dark" ? (
+        <MoonIcon className="w-4 h-4 md:w-5 md:h-5" />
+      ) : (
+        <SunIcon className="w-4 h-4 md:w-5 md:h-5" />
+      )}
+    </button>
   )
 }
