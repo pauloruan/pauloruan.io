@@ -1,6 +1,6 @@
-import { ArrowLeftIcon } from "@radix-ui/react-icons"
 import Image from "next/image"
 import Link from "next/link"
+import { BsArrowLeftShort } from "react-icons/bs"
 
 export function NotFoundContent(): JSX.Element {
   return (
@@ -10,7 +10,7 @@ export function NotFoundContent(): JSX.Element {
           href="/"
           className="flex flex-row items-center text-center no-underline decoration-2 transition duration-300 ease-in-out text-black dark:text-white"
         >
-          <ArrowLeftIcon className="mr-1" /> Voltar para a&nbsp;
+          <BsArrowLeftShort className="mr-1" /> Voltar para a&nbsp;
           <strong className="no-underline hover:underline">
             página inicial
           </strong>
