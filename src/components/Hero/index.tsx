@@ -27,13 +27,13 @@ export function Hero(): JSX.Element {
           </p>
         </div>
       </div>
-      <div className="flex flex-col h-full min-w-[30%] w-full justify-start items-start my-2">
+      <div className="flex flex-col h-full min-w-[30%] w-full justify-start items-start my-4">
+        <p className="max-w-max max-h-max font-sans text-base font-normal text-left text-cod-gray-900 dark:text-cod-gray-50">
+          Bem-vindo(a) ao meu lugar na internet. Eu construo coisas para a web.
+        </p>
         <p className="max-w-max max-h-max font-sans text-base font-normal text-left text-cod-gray-900 dark:text-cod-gray-50">
           Apaixonado por tecnologia, desenvolvimento de software e entusiasta de
           Código Aberto.
-        </p>
-        <p className="max-w-max max-h-max font-sans text-base font-normal text-left text-cod-gray-900 dark:text-cod-gray-50">
-          Bem-vindo(a) ao meu lugar na internet. Eu construo coisas para a web.
         </p>
         <Medias />
       </div>
