@@ -1,5 +1,5 @@
-import { ArrowUpIcon } from "@radix-ui/react-icons"
 import { useEffect, useState } from "react"
+import { BsArrowUpShort } from "react-icons/bs"
 
 export function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -31,7 +31,7 @@ export function ScrollToTopButton() {
       title="Voltar ao topo"
       onClick={scrollToTop}
     >
-      <ArrowUpIcon className="w-4 h-4" />
+      <BsArrowUpShort className="w-4 h-4" />
     </button>
   )
 }
