@@ -107,3 +107,7 @@ declare type BlogProps = {
 declare type PostProps = {
   post: Post
 }
+
+declare type TechCardProps = RootLayoutProps & {
+  url: string
+}
