@@ -111,3 +111,12 @@ declare type PostProps = {
 declare type TechCardProps = RootLayoutProps & {
   url: string
 }
+
+declare type NowPlayingProps = {
+  album: string
+  albumCover: string
+  songUrl: string
+  artist: string
+  isPlaying: boolean
+  title: string
+}
