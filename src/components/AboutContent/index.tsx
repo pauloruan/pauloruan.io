@@ -1,7 +1,8 @@
 import { components } from "@components/PortableText"
 import { SocialLink } from "@components/SocialLink"
 import { PortableText } from "@portabletext/react"
-import { EnvelopeClosedIcon, LinkedInLogoIcon } from "@radix-ui/react-icons"
+import { FaLinkedin } from "react-icons/fa"
+import { MdEmail } from "react-icons/md"
 
 export function AboutContent({ content, contact }: About): JSX.Element {
   return (
@@ -27,13 +28,13 @@ export function AboutContent({ content, contact }: About): JSX.Element {
             label="Email"
             target="_blank"
             href="mailto:ruanpr182@gmail.com?subject=Olá, PR!"
-            icon={<EnvelopeClosedIcon className="h-4 w-4" />}
+            icon={<MdEmail className="h-4 w-4" />}
           />
           <SocialLink
             label="LinkedIn"
             target="_blank"
             href="https://linkedin.com/in/pauloruan/"
-            icon={<LinkedInLogoIcon className="h-4 w-4" />}
+            icon={<FaLinkedin className="h-4 w-4" />}
           />
         </div>
       </div>
