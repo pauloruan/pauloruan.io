@@ -23,7 +23,7 @@ export function Hero(): JSX.Element {
             Paulo Ruan
           </h1>
           <p className="max-w-max max-h-max font-sans text-base font-medium text-left text-cod-gray-900/70 dark:text-cod-gray-50/50 leading-relaxed tracking-wide">
-            Desenvolvedor Back-End
+            Desenvolvedor Full Stack
           </p>
         </div>
       </div>
