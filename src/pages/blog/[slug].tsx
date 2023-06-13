@@ -6,6 +6,7 @@ import { PostContainer } from "@components/PostContainer"
 import { SectionContainer } from "@components/SectionContainer"
 import { client } from "@lib/sanity.client"
 import { sanityQueries } from "@utils/sanityQueries"
+import { NextSeo } from "next-seo"
 import { useRouter } from "next/router"
 
 export async function getStaticProps(context: any) {
@@ -41,6 +42,22 @@ export default function Post({ post }: PostProps): JSX.Element {
 
   return (
     <main className="min-h-screen w-full bg-cod-gray-100 dark:bg-cod-gray-900">
+      <NextSeo
+        title={`${post.title} | Paulo Ruan`}
+        description="Desenvolvedor Web Full Stack, apaixonado por tecnologia e programação."
+        canonical={`https://pauloruan.vercel.app/blog/${post.slug}`}
+        openGraph={{
+          url: `https://pauloruan.vercel.app/blog/${post.slug}`,
+          title: `${post.title} | Paulo Ruan`,
+          images: [
+            {
+              url: `https://pauloruan.vercel.app/api/og?path=${encodeURIComponent(
+                post.slug
+              )}&title=${encodeURIComponent(post.title)}`
+            }
+          ]
+        }}
+      />
       <Animation>
         <Header />
         <SectionContainer>

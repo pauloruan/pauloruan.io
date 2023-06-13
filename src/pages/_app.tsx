@@ -1,3 +1,5 @@
+import SEO from "@utils/next-seo.config"
+import { DefaultSeo } from "next-seo"
 import { ThemeProvider } from "next-themes"
 import type { AppProps } from "next/app"
 import NProgress from "nprogress"
@@ -27,6 +29,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <GlobalProvider>
+        <DefaultSeo {...SEO} />
         <Component {...pageProps} />
       </GlobalProvider>
     </ThemeProvider>
