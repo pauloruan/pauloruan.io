@@ -120,3 +120,8 @@ declare type NowPlayingProps = {
   isPlaying: boolean
   title: string
 }
+
+declare type Technology = {
+  url: string
+  icon: React.ReactNode
+}
