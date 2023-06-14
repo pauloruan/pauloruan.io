@@ -12,7 +12,7 @@ const config: DefaultSeoProps = {
     type: "website",
     locale: "pt_BR",
     url: "https://pauloruan.vercel.app",
-    siteName: "pauloruan.io",
+    siteName: "Paulo Ruan",
     title,
     description,
     images: [
