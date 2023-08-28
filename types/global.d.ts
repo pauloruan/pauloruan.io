@@ -122,6 +122,9 @@ declare type NowPlayingProps = {
 }
 
 declare type Technology = {
+  name: string
   url: string
-  icon: React.ReactNode
+  icon: ElementType
 }
+
+declare type SocialMedia = Technology
