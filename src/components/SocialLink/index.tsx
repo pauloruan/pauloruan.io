@@ -5,7 +5,7 @@ export function SocialLink({ href, target, icon, label }: SocialLinkProps) {
     <Link
       href={href}
       passHref
-      className="text-sm font-sans text-black dark:text-white h-8 max-w-max px-2 bg-cod-gray-200 dark:bg-cod-gray-800 rounded-md flex justify-center items-center gap-2 hover:scale-105 transition-all duration-300"
+      className="text-sm font-sans text-black dark:text-white h-8 max-w-max px-2 bg-cod-gray-200 dark:bg-cod-gray-800 rounded-sm flex justify-center items-center gap-2 hover:scale-105 transition-all duration-300"
       target={target}
     >
       {icon}
