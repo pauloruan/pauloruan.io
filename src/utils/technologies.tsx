@@ -9,65 +9,55 @@ import {
   SiTypescript
 } from "react-icons/si"
 
-export const technologies = [
+export const technologies: Technology[] = [
   {
+    name: "JavaScript",
     url: "https://www.javascript.com",
-    icon: (
-      <SiJavascript className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: SiJavascript
   },
   {
+    name: "TypeScript",
     url: "https://www.typescriptlang.org",
-    icon: (
-      <SiTypescript className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: SiTypescript
   },
   {
+    name: "React",
     url: "https://pt-br.reactjs.org",
-    icon: (
-      <FaReact className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: FaReact
   },
   {
+    name: "Angular",
     url: "https://angular.io",
-    icon: (
-      <SiAngular className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: SiAngular
   },
   {
+    name: "Node.js",
     url: "https://nodejs.org",
-    icon: (
-      <FaNodeJs className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: FaNodeJs
   },
   {
+    name: "Java",
     url: "https://www.java.com/pt-BR",
-    icon: (
-      <FaJava className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: FaJava
   },
   {
+    name: "Spring Boot",
     url: "https://spring.io/projects/spring-boot",
-    icon: (
-      <SiSpring className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: SiSpring
   },
   {
+    name: "Docker",
     url: "https://www.docker.com",
-    icon: (
-      <SiDocker className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: SiDocker
   },
   {
+    name: "PostgreSQL",
     url: "https://www.postgresql.org",
-    icon: (
-      <SiPostgresql className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: SiPostgresql
   },
   {
+    name: "MongoDB",
     url: "https://www.mongodb.com",
-    icon: (
-      <SiMongodb className="h-8 w-8 text-black dark:text-white text-sm font-medium" />
-    )
+    icon: SiMongodb
   }
-] as Technology[]
+]
