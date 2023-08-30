@@ -1,5 +1,5 @@
 import { ButtonToggleTheme } from "@components/ButtonToggleTheme"
-import { LogoLink } from "../LogoLink"
+import { LogoLink } from "@components/LogoLink"
 import { Menu } from "@components/Menu"
 import { navLinks } from "@utils/navLinks"
 
