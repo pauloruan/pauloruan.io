@@ -13,7 +13,7 @@ export function SectionContainer(props: SectionContainerProps): JSX.Element {
           {props.subtitle}
         </h2>
       )}
-      <div className="min-h-[60vh] h-full w-full flex flex-col items-start">
+      <div className="min-h-[70vh] h-full w-full flex flex-col items-start justify-start">
         {props.children}
       </div>
       <ScrollToTopButton />
