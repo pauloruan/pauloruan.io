@@ -122,7 +122,9 @@ declare type NowPlayingProps = {
 }
 
 declare type Technology = {
+  order: number
   name: string
+  slug: string
   url: string
   icon: ElementType
 }
