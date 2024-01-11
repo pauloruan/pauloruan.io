@@ -127,6 +127,7 @@ interface ITechnology {
   slug: string
   url: string
   icon: ElementType
+  frequentlyUsed: boolean
 }
 
 interface ISocialMedia extends Technology {}
