@@ -2,33 +2,33 @@ interface IRootLayoutProps {
   children: React.ReactNode
 }
 
-declare type GlobalProviderProps = IRootLayoutProps
+interface IGlobalProviderProps extends IRootLayoutProps {}
 
-declare type BodyChildren = {
+interface IBodyChildren {
   _key: string
   _type: string
   marks: string[]
   text: string
 }
 
-declare type MarkDefsChildren = {
+interface IMarkDefsChildren {
   _key: string
   _type: string
   href: string
 }
 
-declare type BodyContent = {
+interface IBodyContent {
   _key: string
   _type: string
-  children: BodyChildren[]
-  markDefs: MarkDefsChildren[]
+  children: IBodyChildren[]
+  markDefs: IMarkDefsChildren[]
   style: string
 }
 
-declare type Post = {
+interface IPost {
   authorName: string
   authorImage: string
-  body: BodyContent[]
+  body: IBodyContent[]
   date: string
   slug: string
   title: string
@@ -37,82 +37,82 @@ declare type Post = {
   published: boolean
 }
 
-declare type NavLink = {
+interface INavLink {
   name: string
   path: string
 }
 
-declare type MenuProps = IRootLayoutProps
+interface IMenuProps extends IRootLayoutProps {}
 
-declare type PostsProps = IRootLayoutProps
+interface IPostsProps extends IRootLayoutProps {}
 
-declare type PostContainerProps = IRootLayoutProps
+interface IPostContainerProps extends IRootLayoutProps {}
 
-declare type PostsListProps = {
-  posts: Post[]
+interface IPostsListProps {
+  posts: IPost[]
 }
 
-declare type SectionContainerProps = IRootLayoutProps & {
+interface ISectionContainerProps extends IRootLayoutProps {
   title?: string
   subtitle?: string
 }
 
-declare type AnimationProps = IRootLayoutProps
+interface IAnimationProps extends IRootLayoutProps {}
 
-declare type About = {
+interface IAbout {
   title: string
   occupation: string
   location: string
   image: string
   alt: string
-  content: BodyContent[]
-  contact: BodyContent[]
+  content: IBodyContent[]
+  contact: IBodyContent[]
   interests: string
   pronouns: string
 }
 
-declare type SocialLinkProps = {
+interface ISocialLinkProps {
   href: string
   target: string
-  icon: React.ForwardRefExoticComponent
   label: string
+  icon: ElementType
 }
 
-declare type SobreGetStaticProps = {
+interface ISobreGetStaticProps {
   props: {
-    about: About
+    about: IAbout
   }
 }
 
-declare type SobreProps = {
-  about: About
+interface ISobreProps {
+  about: IAbout
 }
 
-declare type HomeGetStaticProps = {
-  props: HomeProps
+interface IHomeGetStaticProps {
+  props: IHomeProps
 }
 
-declare type HomeProps = {
-  posts: Post[]
+interface IHomeProps {
+  posts: IPost[]
 }
 
-declare type BlogGetStaticProps = {
-  props: Posts
+interface IBlogGetStaticProps {
+  props: IPosts
 }
 
-declare type BlogProps = {
-  posts: Post[]
+interface IBlogProps {
+  posts: IPost[]
 }
 
-declare type PostProps = {
-  post: Post
+interface IPostProps {
+  post: IPost
 }
 
-declare type TechCardProps = IRootLayoutProps & {
+interface ITechCardProps extends IRootLayoutProps {
   url: string
 }
 
-declare type NowPlayingProps = {
+interface INowPlayingProps {
   album: string
   albumCover: string
   songUrl: string
@@ -121,7 +121,7 @@ declare type NowPlayingProps = {
   title: string
 }
 
-declare type Technology = {
+interface ITechnology {
   order: number
   name: string
   slug: string
@@ -129,4 +129,4 @@ declare type Technology = {
   icon: ElementType
 }
 
-declare type SocialMedia = Technology
+interface ISocialMedia extends Technology {}
