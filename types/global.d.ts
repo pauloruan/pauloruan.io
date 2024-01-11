@@ -1,8 +1,8 @@
-declare type RootLayoutProps = {
+interface IRootLayoutProps {
   children: React.ReactNode
 }
 
-declare type GlobalProviderProps = RootLayoutProps
+declare type GlobalProviderProps = IRootLayoutProps
 
 declare type BodyChildren = {
   _key: string
@@ -42,22 +42,22 @@ declare type NavLink = {
   path: string
 }
 
-declare type MenuProps = RootLayoutProps
+declare type MenuProps = IRootLayoutProps
 
-declare type PostsProps = RootLayoutProps
+declare type PostsProps = IRootLayoutProps
 
-declare type PostContainerProps = RootLayoutProps
+declare type PostContainerProps = IRootLayoutProps
 
 declare type PostsListProps = {
   posts: Post[]
 }
 
-declare type SectionContainerProps = RootLayoutProps & {
+declare type SectionContainerProps = IRootLayoutProps & {
   title?: string
   subtitle?: string
 }
 
-declare type AnimationProps = RootLayoutProps
+declare type AnimationProps = IRootLayoutProps
 
 declare type About = {
   title: string
@@ -108,7 +108,7 @@ declare type PostProps = {
   post: Post
 }
 
-declare type TechCardProps = RootLayoutProps & {
+declare type TechCardProps = IRootLayoutProps & {
   url: string
 }
 
