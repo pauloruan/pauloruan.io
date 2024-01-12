@@ -121,13 +121,14 @@ interface INowPlayingProps {
   title: string
 }
 
-interface ITechnology {
+interface ISocialMedia {
   order: number
   name: string
   slug: string
   url: string
   icon: ElementType
-  frequentlyUsed: boolean
 }
 
-interface ISocialMedia extends Technology {}
+interface ITechnology extends ISocialMedia {
+  frequentlyUsed: boolean
+}
