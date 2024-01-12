@@ -1,4 +1,4 @@
-export const navLinks: NavLink[] = [
+export const navLinks: INavLink[] = [
   {
     name: "Sobre",
     path: "/sobre"
