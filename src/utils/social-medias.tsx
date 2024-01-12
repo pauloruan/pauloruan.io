@@ -1,20 +1,26 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
 
-export const socialMedias: SocialMedia[] = [
+export const socialMedias: ISocialMedia[] = [
   {
-    name: "Email",
-    url: "mailto:ruanpr182@gmail.com?subject=Olá, PR!",
-    icon: MdEmail
+    order: 1,
+    name: "Github",
+    slug: "github",
+    url: "https://github.com/pauloruan",
+    icon: FaGithub
   },
   {
-    name: "Linkedin",
+    order: 2,
+    name: "LinkedIn",
+    slug: "linkedin",
     url: "https://linkedin.com/in/pauloruan",
     icon: FaLinkedin
   },
   {
-    name: "Github",
-    url: "https://github.com/pauloruan",
-    icon: FaGithub
+    order: 3,
+    name: "Email",
+    slug: "email",
+    url: "mailto:ola@pauloruan.dev",
+    icon: MdEmail
   }
 ]
