@@ -1,13 +1,14 @@
 import Link from "next/link"
 
-export function TechCard({ children, url }: TechCardProps): JSX.Element {
+export function TechCard({ url, name, icon: Icon }: ITechnology): JSX.Element {
   return (
     <Link
       href={url}
       passHref
-      className="p-2 h-8 w-8 flex flex-row items-center justify-center text-center transition-all duration-300 ease-in-out hover:shadow-lg hover:bg-cod-gray-200 dark:hover:bg-cod-gray-800 rounded-sm"
+      className="p-2 max-h-max max-w-max flex flex-row items-center justify-center text-center gap-1 text-black dark:text-white text-sm font-normal transition-all duration-300 ease-in-out hover:text-black/60 dark:hover:text-white/60 hover:underline hover:underline-offset-2 group"
     >
-      {children}
+      <Icon className="h-4 w-4 text-black dark:text-white text-sm font-medium transition-all duration-300 ease-in-out group-hover:text-black/60 dark:group-hover:text-white/60" />
+      {name}
     </Link>
   )
 }
