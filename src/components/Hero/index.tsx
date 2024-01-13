@@ -20,13 +20,13 @@ export function Hero(): JSX.Element {
               Desenvolvedor Backend
             </h2>
             <span className="max-w-max max-h-max font-sans text-base font-medium text-left text-cod-gray-900/80 dark:text-cod-gray-50/50 leading-relaxed tracking-wide">
-              Construo interfaces, sistemas e experiências.
+              Construo sistemas, interfaces e experiências.
             </span>
           </div>
         </div>
         <p className="max-w-max max-h-max my-2 font-sans text-base font-normal text-left text-cod-gray-900 dark:text-cod-gray-50">
           Olá, sou Paulo Ruan, um desenvolvedor e estudante de&nbsp;
-          <strong>Análise e Desenvolvimento de Software</strong> que adora criar
+          <strong>Análise e Desenvolvimento de Sistemas</strong> que adora criar
           coisas com código e solucionar problemas. Apaixonado por tecnologia,
           desenvolvimento de software e entusiasta de Código Aberto.
         </p>
