@@ -71,13 +71,6 @@ interface IAbout {
   pronouns: string
 }
 
-interface ISocialLinkProps {
-  href: string
-  target: string
-  label: string
-  icon: ElementType
-}
-
 interface ISobreGetStaticProps {
   props: {
     about: IAbout
@@ -121,7 +114,12 @@ interface INowPlayingProps {
   title: string
 }
 
-interface ISocialMedia {
+interface ILink {
+  label: string
+  renderLabel: boolean
+}
+
+interface ISocialMedia extends ILink {
   order: number
   name: string
   slug: string
@@ -131,4 +129,8 @@ interface ISocialMedia {
 
 interface ITechnology extends ISocialMedia {
   frequentlyUsed: boolean
+}
+
+interface ILinkCardProps {
+  linkData: ISocialMedia | ITechnology
 }
