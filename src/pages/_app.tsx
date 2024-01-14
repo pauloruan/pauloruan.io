@@ -1,4 +1,4 @@
-import SEO from "@utils/next-seo.config"
+import SEO from "@/utils/next-seo.config"
 import { DefaultSeo } from "next-seo"
 import { ThemeProvider } from "next-themes"
 import type { AppProps } from "next/app"

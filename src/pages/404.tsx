@@ -1,8 +1,8 @@
-import { Animation } from "@components/Animation"
-import { Footer } from "@components/Footer"
-import { Header } from "@components/Header"
-import { NotFoundContent } from "@components/NotFoundContent"
-import { SectionContainer } from "@components/SectionContainer"
+import { NotFoundContent } from "@/components/NotFoundContent"
+import { Animation } from "@/components/shared/Animation"
+import { Footer } from "@/components/shared/Footer"
+import { Header } from "@/components/shared/Header"
+import { SectionContainer } from "@/components/shared/SectionContainer"
 import { NextSeo } from "next-seo"
 
 export default function NotFound(): JSX.Element {
