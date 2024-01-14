@@ -1,4 +1,4 @@
-import { HomeContent } from "@components/HomeContent"
+import { HomeContent } from "@/components/home/HomeContent"
 import "@testing-library/jest-dom"
 import { render, screen } from "@testing-library/react"
 

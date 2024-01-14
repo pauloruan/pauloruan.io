@@ -1,4 +1,4 @@
-import { PostContainer } from "@components/PostContainer"
+import { PostContainer } from "@/components/PostContainer"
 import mock from "@mocks/post.mock"
 import "@testing-library/jest-dom"
 import { render, screen } from "@testing-library/react"

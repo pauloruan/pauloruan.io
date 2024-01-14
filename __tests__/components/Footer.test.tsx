@@ -1,6 +1,6 @@
-import { Footer } from "@components/Footer"
-import { render, screen } from "@testing-library/react"
+import { Footer } from "@/components/shared/Footer"
 import "@testing-library/jest-dom"
+import { render, screen } from "@testing-library/react"
 
 describe("Footer", (): void => {
   it("should render the footer", (): void => {

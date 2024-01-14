@@ -1,4 +1,4 @@
-import { SectionContainer } from "@components/SectionContainer"
+import { SectionContainer } from "@/components/shared/SectionContainer"
 import "@testing-library/jest-dom"
 import { render, screen } from "@testing-library/react"
 
