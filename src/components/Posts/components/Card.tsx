@@ -1,4 +1,4 @@
-import { convertToBrazilianDate } from "@utils/convertToBrazilianDate"
+import { convertToBrazilianDate } from "@/utils/convertToBrazilianDate"
 import Link from "next/link"
 
 export function Card({ slug, title, date }: Post): JSX.Element {

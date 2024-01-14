@@ -1,4 +1,4 @@
-import { NowPlaying } from "@components/NowPlaying"
+import { NowPlaying } from "@/components/shared/Footer/NowPlaying"
 
 export function Footer(): JSX.Element {
   const currentYear = new Date().getFullYear()
@@ -8,7 +8,7 @@ export function Footer(): JSX.Element {
       <NowPlaying />
       <div className="max-w-max font-sans font-normal text-left text-cod-gray-800 dark:text-cod-gray-200 leading-relaxed tracking-wide">
         <p>
-          &copy; <time>{currentYear}</time> • Paulo Ruan
+          &copy; <time>2023</time> - <time>{currentYear}</time> • Paulo Ruan
         </p>
         <p>Desenvolvido com Next.js & Tailwind CSS.</p>
       </div>

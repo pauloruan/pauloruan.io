@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-export function Item({ name, path }: NavLink): JSX.Element {
+export function Item({ name, path }: INavLink): JSX.Element {
   const router = useRouter()
   const active = "text-black dark:text-white font-bold"
   const general = "text-cod-gray-800 dark:text-cod-gray-200 font-medium"

@@ -1,5 +1,5 @@
-import { TechCard } from "@components/TechCard"
-import { technologies } from "@utils/technologies"
+import { technologies } from "@/utils/technologies"
+import { LinkCard } from "../LinkCard"
 
 export function FrequentTechnologies() {
   const orderedTechnologies = technologies
@@ -14,7 +14,7 @@ export function FrequentTechnologies() {
       </h3>
       <div className="w-full h-full flex flex-row flex-wrap justify-start items-center gap-1">
         {orderedTechnologies.map((tech: ITechnology) => (
-          <TechCard key={tech.slug} {...tech} />
+          <LinkCard key={tech.slug} linkData={tech} />
         ))}
       </div>
     </div>

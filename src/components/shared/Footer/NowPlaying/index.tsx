@@ -3,12 +3,12 @@ import { useEffect, useState } from "react"
 import { FaSpotify } from "react-icons/fa"
 
 export function NowPlaying(): JSX.Element {
-  const [song, setSong] = useState<NowPlayingProps | null>(null)
+  const [song, setSong] = useState<INowPlayingProps | null>(null)
 
   useEffect(() => {
     async function getSong() {
       const response = await fetch("/api/now-playing")
-      const song: NowPlayingProps = await response.json()
+      const song: INowPlayingProps = await response.json()
       setSong(song)
     }
     getSong()

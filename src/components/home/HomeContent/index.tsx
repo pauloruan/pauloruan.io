@@ -1,5 +1,5 @@
-import { FrequentTechnologies } from "@components/FrequentTechnologies"
-import { Hero } from "@components/Hero"
+import { Hero } from "@/components/home/Hero"
+import { FrequentTechnologies } from "@/components/shared/FrequentTechnologies"
 
 export function HomeContent(): JSX.Element {
   return (

@@ -1,7 +1,7 @@
-import { ButtonToggleTheme } from "@components/ButtonToggleTheme"
-import { LogoLink } from "@components/LogoLink"
-import { Menu } from "@components/Menu"
-import { navLinks } from "@utils/navLinks"
+import { ButtonToggleTheme } from "@/components/shared/Header/ButtonToggleTheme"
+import { LogoLink } from "@/components/shared/Header/LogoLink"
+import { Menu } from "@/components/shared/Header/Menu"
+import { navLinks } from "@/utils/navLinks"
 
 export function Header(): JSX.Element {
   return (
@@ -9,7 +9,7 @@ export function Header(): JSX.Element {
       <div className="w-[96%] h-full px-2 py-2 flex flex-row flex-nowrap items-center justify-between">
         <LogoLink />
         <Menu.Container>
-          {navLinks.map((link: NavLink) => (
+          {navLinks.map((link: INavLink) => (
             <Menu.Item key={link.path} {...link} />
           ))}
         </Menu.Container>

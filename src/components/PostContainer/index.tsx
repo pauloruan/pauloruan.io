@@ -1,8 +1,8 @@
-import { components } from "@components/PortableText"
+import { components } from "@/components/PortableText"
+import { convertToBrazilianDate } from "@/utils/convertToBrazilianDate"
+import { readingTime } from "@/utils/readTime"
+import { urlFor } from "@/utils/url-for"
 import { PortableText } from "@portabletext/react"
-import { convertToBrazilianDate } from "@utils/convertToBrazilianDate"
-import { readingTime } from "@utils/readTime"
-import { urlFor } from "@utils/url-for"
 import Image from "next/image"
 
 export function PostContainer({ post }: PostProps): JSX.Element {

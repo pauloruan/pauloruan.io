@@ -1,9 +1,9 @@
-import { FrequentTechnologies } from "@components/FrequentTechnologies"
-import { Medias } from "@components/Medias"
-import { components } from "@components/PortableText"
+import { components } from "@/components/PortableText"
+import { FrequentTechnologies } from "@/components/shared/FrequentTechnologies"
+import { Medias } from "@/components/shared/SocialMediaList"
 import { PortableText } from "@portabletext/react"
 
-export function AboutContent({ content, contact }: About): JSX.Element {
+export function AboutContent({ content, contact }: IAbout): JSX.Element {
   return (
     <div className="w-full h-full flex flex-col items-start justify-start my-4 gap-5">
       <PortableText
