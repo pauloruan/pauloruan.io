@@ -1,4 +1,4 @@
-import { getNowPlaying } from "@lib/spotify"
+import { getNowPlaying } from "@/lib/spotify"
 import { NextApiRequest, NextApiResponse } from "next"
 
 export default async function handler(
