@@ -41,6 +41,6 @@
     "node_modules"
   ],
   "typeRoots": [
-    "./types/global.d.ts"
+    "./types/*.d.ts"
   ]
 }
