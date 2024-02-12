@@ -1,16 +1,14 @@
-export function countWords(blocks: BodyContent[]): number[][] {
-  const words = blocks.map((block) => {
-    return block.children.map((child) => {
-      return child.text.split(" ").length
-    })
-  })
-  return words
+export function countCharacters(text: string): number {
+  const regex = /[^\w\d\u00C0-\u00FF]/g
+  const words = text.trim().split(/\s+/)
+  const wordsLengths = words.map((word) => word.replace(regex, "").length)
+  const count = wordsLengths.reduce((acc, cur) => acc + cur, 0)
+  return count
 }
 
-export function readingTime(blocks: BodyContent[]): string {
-  const words = countWords(blocks)
+export function readingTime(text: string): string {
+  const count = countCharacters(text)
   const wordsPerMinute = 225
-  const totalWords = words.flat().reduce((acc, curr) => acc + curr)
-  const readingTime = Math.ceil(totalWords / wordsPerMinute)
+  const readingTime = Math.ceil(count / wordsPerMinute)
   return `${readingTime} min de leitura`
 }
