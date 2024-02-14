@@ -3,6 +3,15 @@ import { MdEmail } from "react-icons/md"
 
 export const socialMedias: ISocialMedia[] = [
   {
+    order: 1,
+    name: "Email",
+    slug: "email",
+    label: "ola@pauloruan.dev",
+    renderLabel: false,
+    url: "mailto:ola@pauloruan.dev",
+    icon: MdEmail
+  },
+  {
     order: 2,
     name: "Github",
     slug: "github",
@@ -19,14 +28,5 @@ export const socialMedias: ISocialMedia[] = [
     renderLabel: false,
     url: "https://linkedin.com/in/pauloruan",
     icon: FaLinkedin
-  },
-  {
-    order: 1,
-    name: "Email",
-    slug: "email",
-    label: "ola@pauloruan.dev",
-    renderLabel: true,
-    url: "mailto:ola@pauloruan.dev",
-    icon: MdEmail
   }
 ]
