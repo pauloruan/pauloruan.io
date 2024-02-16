@@ -137,6 +137,7 @@ interface NotionGSP {
   slug: string
   description: string
   tags: string[]
+  reading_time: number
   published_at: string
 }
 
