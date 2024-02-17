@@ -2,7 +2,7 @@ import { SocialMediaList } from "../SocialMediaList"
 
 export function Contact() {
   return (
-    <div className="w-full h-full flex flex-col justify-center items-start my-1 py-2 px-2 space-y-2 bg-yellow-300">
+    <div className="w-full h-full flex flex-col justify-center items-start my-1 py-2 px-2 space-y-2">
       <h3 className="text-lg md:text-xl max-w-max max-h-max font-semibold text-black dark:text-white font-sans my-1">
         Contato
       </h3>
