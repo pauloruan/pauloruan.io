@@ -1,34 +1,29 @@
 import * as React from "react"
 
 interface GlobalContextProps {
-  posts: Post[]
-  setPosts: React.Dispatch<React.SetStateAction<Post[]>>
-  searchValue: string
-  setSearchValue: React.Dispatch<React.SetStateAction<string>>
+  posts: NotionGSP[]
+  setPosts: React.Dispatch<React.SetStateAction<NotionGSP[]>>
 }
 
 const DEFAULT_VALUE = {
   posts: [],
-  setPosts: () => {},
-  searchValue: "",
-  setSearchValue: () => {}
+  setPosts: () => {}
 }
 
 export const GlobalContext =
   React.createContext<GlobalContextProps>(DEFAULT_VALUE)
 
-export function GlobalProvider({ children }: GlobalProviderProps): JSX.Element {
-  const [posts, setPosts] = React.useState<Post[]>([])
-  const [searchValue, setSearchValue] = React.useState("")
+export function GlobalProvider({
+  children
+}: IGlobalProviderProps): JSX.Element {
+  const [posts, setPosts] = React.useState<NotionGSP[]>([])
 
   const memoizedValue = React.useMemo(
     () => ({
       posts,
-      setPosts,
-      searchValue,
-      setSearchValue
+      setPosts
     }),
-    [posts, searchValue]
+    [posts]
   )
 
   return (
