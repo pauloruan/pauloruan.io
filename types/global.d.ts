@@ -134,3 +134,7 @@ interface ITechnology extends ISocialMedia {
 interface ILinkCardProps {
   data: ISocialMedia | ITechnology
 }
+
+interface IMenuLinksProps {
+  links: INavLink[]
+}
