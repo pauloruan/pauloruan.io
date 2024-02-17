@@ -1,7 +1,7 @@
 export function Container({ children }: IMenuProps): JSX.Element {
   return (
-    <nav className="w-64 flex flex-row justify-center items-center">
+    <div className="w-[96%] px-2 h-full flex flex-row flex-nowrap items-center justify-between">
       {children}
-    </nav>
+    </div>
   )
 }
