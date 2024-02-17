@@ -7,9 +7,9 @@ export function SocialMediaList(): JSX.Element {
     .sort((a, b) => a.order - b.order)
 
   return (
-    <div className="flex flex-row justify-between items-center my-4 w-64">
+    <div className="flex flex-row justify-between items-center w-64">
       {orderedSocialMedias.map((media: ISocialMedia) => (
-        <LinkCard key={media.slug} linkData={media} />
+        <LinkCard key={media.slug} data={media} />
       ))}
     </div>
   )
