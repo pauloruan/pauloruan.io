@@ -1,115 +1,59 @@
-interface NotionDatabaseResponse {
-  object: string
-  results: NotionResult[]
-  next_cursor: any
-  has_more: boolean
-  type: string
-  page_or_database: NotionPageOrDatabase
-  request_id: string
-}
-
-interface NotionResult {
-  object: string
-  id: string
-  created_time: string
-  last_edited_time: string
-  created_by: NotionUser
-  last_edited_by: NotionUser
-  cover: any
-  icon: any
-  parent: NotionParent
-  archived: boolean
-  properties: NotionProperties
-  url: string
-  public_url: any
-}
-
-interface NotionUser {
-  object: string
-  id: string
-}
-
-interface NotionParent {
+interface IParent {
   type: string
   database_id: string
 }
 
-interface NotionSlug {
+interface IUser {
+  object: string
   id: string
-  type: string
-  rich_text: NotionRichText[]
 }
 
-interface NotionRichText {
-  type: string
-  text: NotionText
-  annotations: NotionAnnotations
-  plain_text: string
-  href: any
-}
-
-interface NotionText {
-  content: string
-  link: any
-}
-
-interface NotionAnnotations {
-  bold: boolean
-  italic: boolean
-  strikethrough: boolean
-  underline: boolean
-  code: boolean
-  color: string
-}
-
-interface NotionPublishedAt {
-  id: string
-  type: string
-  date: NotionDate
-}
-
-interface NotionDate {
+interface IDate {
   start: string
   end: any
   time_zone: any
 }
 
-interface NotionTags {
+interface INotionPublishedAt {
   id: string
   type: string
-  multi_select: NotionMultiSelect[]
+  date: IDate
 }
 
-interface NotionMultiSelect {
+interface IFormula {
+  type: string
+  string: string
+}
+
+interface INotionSlug {
+  id: string
+  type: string
+  formula: IFormula
+}
+
+interface ICreatedBy {
+  object: string
+  id: string
+}
+
+interface IMultiSelect {
   id: string
   name: string
   color: string
 }
 
-interface NotionTitle {
+interface INotionTags {
   id: string
   type: string
-  title: NotionRichText[]
+  multi_select: IMultiSelect[]
 }
 
-interface NotionGSPResponse {
-  props: {
-    posts: NotionGSP[]
-  }
-}
-
-interface NotionHomeProps {
-  posts: NotionGSP[]
-}
-
-// Validados
-
-interface INotionPostTextContent {
+interface IText {
   content: string
-  link: null
+  link: any
 }
 
-interface INotionPostTextAnnotations {
+interface IAnnotations {
   bold: boolean
   italic: boolean
   strikethrough: boolean
@@ -118,10 +62,62 @@ interface INotionPostTextAnnotations {
   color: string
 }
 
-interface INotionPostRichText {
+interface IRichText {
   type: string
-  text: INotionPostTextContent
-  annotations: INotionPostTextAnnotations
+  text: IText
+  annotations: IAnnotations
+  plain_text: string
+  href: any
+}
+
+interface INotionTitle {
+  id: string
+  type: string
+  title: IRichText[]
+}
+
+interface INotionCreatedBy {
+  id: string
+  type: string
+  created_by: ICreatedBy
+}
+
+interface IPostTextContent {
+  content: string
+  link: null
+}
+
+interface IPostTextAnnotations {
+  bold: boolean
+  italic: boolean
+  strikethrough: boolean
+  underline: boolean
+  code: boolean
+  color: string
+}
+
+interface INotionStatus {
+  id: string
+  type: string
+  status: IStatus
+}
+
+interface IStatus {
+  id: string
+  name: string
+  color: string
+}
+
+interface INotionReadingTime {
+  id: string
+  type: string
+  number: number
+}
+
+interface IPostRichText {
+  type: string
+  text: IPostTextContent
+  annotations: IPostTextAnnotations
   plain_text: string
   href: null
 }
@@ -129,24 +125,49 @@ interface INotionPostRichText {
 interface INotionPostDescription {
   id: string
   type: string
-  rich_text: INotionPostRichText[]
+  rich_text: IPostRichText[]
 }
 
-interface NotionGSP {
+interface INotionProperties {
+  title: INotionTitle
+  slug: INotionSlug
+  tags: INotionTags
+  status: INotionStatus
+  created_by: INotionCreatedBy
+  reading_time: INotionReadingTime
+  published_at: INotionPublishedAt
+  description: INotionPostDescription
+}
+
+interface INotionResult {
+  object: string
+  id: string
+  created_time: string
+  last_edited_time: string
+  created_by: IUser
+  last_edited_by: IUser
+  cover: any
+  icon: any
+  parent: IParent
+  archived: boolean
+  properties: INotionProperties
+  url: string
+  public_url: any
+}
+
+interface INotionDatabaseResponse {
+  results: INotionResult[]
+}
+
+interface INotionPost {
   title: string
   slug: string
   description: string
   tags: string[]
   reading_time: number
   published_at: string
-}
-
-interface NotionProperties {
-  slug: NotionSlug
-  published_at: NotionPublishedAt
-  description: INotionPostDescription
-  tags: NotionTags
-  title: NotionTitle
+  status: string
+  created_by: string
 }
 
 interface INotionFormattedPost {
@@ -155,5 +176,18 @@ interface INotionFormattedPost {
   description: string
   tags: string[]
   published_at: string
+  reading_time: number
+  status: string
+  created_by: string
   content: string
+}
+
+interface NotionGSPResponse {
+  props: {
+    posts: INotionPost[]
+  }
+}
+
+interface NotionHomeProps {
+  posts: INotionPost[]
 }
