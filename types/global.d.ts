@@ -132,5 +132,5 @@ interface ITechnology extends ISocialMedia {
 }
 
 interface ILinkCardProps {
-  linkData: ISocialMedia | ITechnology
+  data: ISocialMedia | ITechnology
 }
