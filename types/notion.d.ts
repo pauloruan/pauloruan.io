@@ -188,6 +188,8 @@ interface NotionGSPResponse {
   }
 }
 
-interface NotionHomeProps {
+interface IPostsListProps {
   posts: INotionPost[]
 }
+
+interface NotionHomeProps extends IPostsListProps {}
