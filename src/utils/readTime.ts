@@ -6,8 +6,14 @@ export function countCharacters(text: string): number {
   return count
 }
 
-export function readingTime(text: string): string {
+export function readingTimeByText(text: string): string {
   const count = countCharacters(text)
+  const wordsPerMinute = 225
+  const readingTime = Math.ceil(count / wordsPerMinute)
+  return `${readingTime} min de leitura`
+}
+
+export function readingTime(count: number): string {
   const wordsPerMinute = 225
   const readingTime = Math.ceil(count / wordsPerMinute)
   return `${readingTime} min de leitura`
