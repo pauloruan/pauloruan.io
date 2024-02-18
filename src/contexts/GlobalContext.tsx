@@ -1,8 +1,8 @@
 import * as React from "react"
 
 interface GlobalContextProps {
-  posts: NotionGSP[]
-  setPosts: React.Dispatch<React.SetStateAction<NotionGSP[]>>
+  posts: INotionPost[]
+  setPosts: React.Dispatch<React.SetStateAction<INotionPost[]>>
 }
 
 const DEFAULT_VALUE = {
@@ -16,7 +16,7 @@ export const GlobalContext =
 export function GlobalProvider({
   children
 }: IGlobalProviderProps): JSX.Element {
-  const [posts, setPosts] = React.useState<NotionGSP[]>([])
+  const [posts, setPosts] = React.useState<INotionPost[]>([])
 
   const memoizedValue = React.useMemo(
     () => ({
