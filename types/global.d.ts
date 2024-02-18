@@ -25,18 +25,6 @@ interface IBodyContent {
   style: string
 }
 
-interface IPost {
-  authorName: string
-  authorImage: string
-  body: IBodyContent[]
-  date: string
-  slug: string
-  title: string
-  subtitle: string
-  categories: string[]
-  published: boolean
-}
-
 interface INavLink {
   name: string
   path: string
@@ -47,10 +35,6 @@ interface IMenuProps extends IRootLayoutProps {}
 interface IPostsProps extends IRootLayoutProps {}
 
 interface IPostContainerProps extends IRootLayoutProps {}
-
-interface IPostsListProps {
-  posts: IPost[]
-}
 
 interface ISectionContainerProps extends IRootLayoutProps {
   title?: string
