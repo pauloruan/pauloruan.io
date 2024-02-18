@@ -1,16 +1,46 @@
+import { Badge } from "@/components/ui/badge"
+import {
+  Card as CardContainer,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card"
 import { convertToBrazilianDate } from "@/utils/convertToBrazilianDate"
+import { readingTime } from "@/utils/readTime"
 import Link from "next/link"
+import { FiArrowUpRight } from "react-icons/fi"
 
-export function Card({ slug, title, date }: Post): JSX.Element {
+export function Card(post: INotionPost): JSX.Element {
   return (
-    <Link
-      href={`/blog/${slug}`}
-      className="w-full h-full font-sans flex flex-col justify-center items-start gap-2 shadow-md transition-all duration-300 ease-in-out cursor-pointer rounded-sm px-4 py-2 bg-cod-gray-200 dark:bg-cod-gray-800 hover:bg-cod-gray-300/60 dark:hover:bg-cod-gray-700 text-black dark:text-white"
-    >
-      <h3 className="max-w-max text-lg font-semibold">{title}</h3>
-      <time className="lowercase text-xs py-1 my-1">
-        {convertToBrazilianDate(date)}
-      </time>
+    <Link href={`/blog/${post.slug}`}>
+      <CardContainer className="h-full w-full rounded-md transition-all duration-300 ease-in-out hover:shadow-lg group">
+        <CardHeader className="p-2">
+          <CardTitle className="h-6 max-w-max flex justify-start items-center gap-1 text-center truncate">
+            {post.title}
+            <FiArrowUpRight className="h-4 w-4 text-sm font-medium transition-all duration-300 ease-in-out" />
+          </CardTitle>
+          <CardDescription className="truncate">
+            {post.description}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-2">
+          {post.tags.map((tag) => (
+            <Badge key={tag} className="capitalize mr-2" variant="secondary">
+              {tag}
+            </Badge>
+          ))}
+        </CardContent>
+        <CardFooter className="p-2 flex flex-col justify-center items-start gap-1">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {readingTime(post.reading_time)}
+          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {convertToBrazilianDate(post.published_at)}
+          </p>
+        </CardFooter>
+      </CardContainer>
     </Link>
   )
 }
