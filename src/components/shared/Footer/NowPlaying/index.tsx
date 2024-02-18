@@ -20,7 +20,7 @@ export function NowPlaying(): JSX.Element {
       <div className="inline-flex flex-col md:flex-row  justify-start items-start w-full max-w-full truncate">
         {song?.songUrl ? (
           <Link
-            className="text-cod-gray-900 dark:text-cod-gray-200 font-medium cursor-pointer max-w-max truncate"
+            className="text-primary dark:text-primary font-medium cursor-pointer max-w-max truncate"
             href={song.songUrl}
             target="_blank"
             passHref
@@ -28,14 +28,14 @@ export function NowPlaying(): JSX.Element {
             {song.title}
           </Link>
         ) : (
-          <p className="text-cod-gray-900 dark:text-cod-gray-200 font-medium">
+          <p className="text-primary dark:text-primary font-medium">
             Not Playing
           </p>
         )}
-        <span className="mx-2 text-cod-gray-500 dark:text-cod-gray-300 hidden md:block">
+        <span className="mx-2 text-primary dark:text-primary hidden md:block">
           {" – "}
         </span>
-        <p className="text-cod-gray-500 dark:text-cod-gray-300 max-w-max truncate">
+        <p className="text-primary dark:text-primary max-w-max truncate">
           {song?.artist ?? "Spotify"}
         </p>
       </div>
