@@ -1,5 +1,5 @@
+import { Badge } from "@/components/ui/badge"
 import { technologies } from "@/utils/technologies"
-import { LinkCard } from "../LinkCard"
 
 export function FrequentTechnologies() {
   const orderedTechnologies = technologies
@@ -12,9 +12,15 @@ export function FrequentTechnologies() {
       <h3 className="text-lg md:text-xl max-w-max max-h-max my-1 py-1 font-sans font-semibold text-black dark:text-white">
         Tecnologias utilizadas frequentemente
       </h3>
-      <div className="w-full h-full flex flex-row flex-wrap justify-start items-center gap-1">
-        {orderedTechnologies.map((tech: ITechnology) => (
-          <LinkCard key={tech.slug} data={tech} />
+      <div className="w-full h-full max-w-xl flex flex-row flex-wrap justify-start items-center gap-2">
+        {orderedTechnologies.map(({ slug, name }: ITechnology) => (
+          <Badge
+            key={slug}
+            variant="secondary"
+            className="text-xs font-normal tracking-wide rounded-sm gap-2 shadow-sm"
+          >
+            {name}
+          </Badge>
         ))}
       </div>
     </div>
