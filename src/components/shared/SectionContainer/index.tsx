@@ -8,11 +8,6 @@ export function SectionContainer(props: ISectionContainerProps): JSX.Element {
           {props.title}
         </h1>
       )}
-      {props.subtitle && (
-        <h2 className="max-w-max h-full font-sans text-base font-normal text-left py-1 text-cod-gray-900/70 dark:text-cod-gray-50/50 leading-relaxed tracking-tight">
-          {props.subtitle}
-        </h2>
-      )}
       <div className="min-h-[70vh] h-full w-full flex flex-col items-start justify-start">
         {props.children}
       </div>
