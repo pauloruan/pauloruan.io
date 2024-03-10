@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { GlobalContext } from "@/contexts/GlobalContext"
 import Link from "next/link"
 import { useContext } from "react"
@@ -15,15 +14,14 @@ export function RecentPosts(): JSX.Element {
       </h3>
       <div className="w-full h-full flex flex-col justify-center items-start gap-4">
         <Posts.RecentList posts={posts} />
-        <Button asChild variant="outline">
-          <Link
-            href="/blog"
-            className="flex justify-center items-center text-center gap-1 font-medium text-primary dark:text-primary"
-          >
-            Ver todos os textos
-            <FiArrowUpRight className="h-4 w-4 text-primary dark:text-primary" />
-          </Link>
-        </Button>
+
+        <Link
+          href="/blog"
+          className="flex justify-start items-center text-center gap-1 font-medium underline group cursor-pointer"
+        >
+          <FiArrowUpRight className="h-4 w-4" />
+          Ver todos os textos
+        </Link>
       </div>
     </div>
   )
