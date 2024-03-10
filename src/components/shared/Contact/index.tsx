@@ -1,6 +1,12 @@
+import { socialMedias } from "@/utils/socialMedias"
+import Link from "next/link"
 import { SocialMediaList } from "../SocialMediaList"
 
 export function Contact() {
+  const [{ url, label }] = socialMedias
+    .slice()
+    .filter(({ name }: ISocialMedia) => name === "Email")
+
   return (
     <div className="w-full h-full flex flex-col justify-center items-start my-1 py-2 px-2 space-y-2">
       <h3 className="text-lg md:text-xl max-w-max max-h-max font-semibold text-black dark:text-white font-sans my-1">
@@ -12,6 +18,13 @@ export function Contact() {
         no qual posso contribuir, não hesite em entrar em contato. Vamos
         discutir como transformar suas ideias em experiências.
       </p>
+      <Link
+        href={url}
+        target="_blank"
+        className="max-w-max py-2 font-medium text-base leading-relaxed tracking-wide underline"
+      >
+        {label}
+      </Link>
       <p className="max-w-max max-h-max my-2 font-sans text-sm md:text-base font-normal text-left text-theme-dark dark:text-theme-light">
         Você pode me encontrar em qualquer uma das redes sociais abaixo
       </p>
