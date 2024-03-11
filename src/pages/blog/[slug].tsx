@@ -4,15 +4,13 @@ import { Footer } from "@/components/shared/Footer"
 import { Header } from "@/components/shared/Header"
 import { Loading } from "@/components/shared/Loading"
 import { SectionContainer } from "@/components/shared/SectionContainer"
-import { sanityQueries } from "@/utils/sanityQueries"
-import { client } from "@lib/sanity.client"
 import { NextSeo } from "next-seo"
 import { useRouter } from "next/router"
+import { getPost, getSlugs } from "../_services/notion"
 
 export async function getStaticProps(context: any) {
   const { slug } = context.params
-  const [post] = await client.fetch(sanityQueries.postBySlug, { slug })
-
+  const post = await getPost(slug)
   return {
     props: {
       post
@@ -21,10 +19,10 @@ export async function getStaticProps(context: any) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await client.fetch(sanityQueries.postSlugs)
+  const slugs = await getSlugs()
 
-  const paths = slugs.map((post: Post) => ({
-    params: { slug: post.slug }
+  const paths = slugs.map((slug: string) => ({
+    params: { slug }
   }))
 
   return {
@@ -33,7 +31,11 @@ export async function getStaticPaths() {
   }
 }
 
-export default function Post({ post }: PostProps): JSX.Element {
+interface IPost {
+  post: INotionFormattedPost
+}
+
+export default function Post({ post }: IPost): JSX.Element {
   const router = useRouter()
 
   if (router.isFallback) {
@@ -41,7 +43,7 @@ export default function Post({ post }: PostProps): JSX.Element {
   }
 
   return (
-    <main className="min-h-screen w-full bg-cod-gray-100 dark:bg-cod-gray-900">
+    <main className="min-h-screen w-full bg-theme-light dark:bg-theme-dark">
       <NextSeo
         title={`${post.title} | Paulo Ruan`}
         description="Desenvolvedor Web Full Stack, apaixonado por tecnologia e programação."
