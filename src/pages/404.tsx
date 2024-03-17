@@ -7,7 +7,7 @@ import { NextSeo } from "next-seo"
 
 export default function NotFound(): JSX.Element {
   return (
-    <main className="min-h-screen w-full bg-cod-gray-100 dark:bg-cod-gray-900">
+    <main className="min-h-screen w-full bg-theme-light dark:bg-theme-dark">
       <NextSeo
         title="Página não encontrada | Paulo Ruan"
         description="Desenvolvedor Web Full Stack, apaixonado por tecnologia e programação."
@@ -19,7 +19,7 @@ export default function NotFound(): JSX.Element {
       />
       <Animation>
         <Header />
-        <SectionContainer title="Página não encontrada">
+        <SectionContainer>
           <NotFoundContent />
         </SectionContainer>
         <Footer />
