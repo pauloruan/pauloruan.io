@@ -1,23 +1,22 @@
+import { sanityComponents } from "@/components/PortableText"
+import { Typography } from "@/components/Typography"
+import { SocialMediaList } from "@/components/shared/SocialMediaList"
+import { GlobalContext } from "@/contexts/GlobalContext"
 import { socialMedias } from "@/utils/socialMedias"
+import { PortableText } from "@portabletext/react"
 import Link from "next/link"
-import { SocialMediaList } from "../SocialMediaList"
+import { useContext } from "react"
 
 export function Contact() {
+  const { about } = useContext(GlobalContext)
   const [{ url, label }] = socialMedias
     .slice()
     .filter(({ name }: ISocialMedia) => name === "Email")
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-start my-1 py-2 px-2 space-y-2">
-      <h3 className="text-lg md:text-xl max-w-max max-h-max font-semibold text-black dark:text-white font-sans my-1">
-        Contato
-      </h3>
-      <p className="max-w-max max-h-max my-2 font-sans text-sm md:text-base font-normal text-left text-theme-dark dark:text-theme-light">
-        Estou sempre aberto a conversar, conectar-me com pessoas inovadoras e
-        explorar novas oportunidades. Se você tem um projeto ou ideia em mente
-        no qual posso contribuir, não hesite em entrar em contato. Vamos
-        discutir como transformar suas ideias em experiências.
-      </p>
+      <Typography.H3>Contato</Typography.H3>
+      <PortableText value={about.contact} components={sanityComponents} />
       <Link
         href={url}
         target="_blank"
@@ -25,9 +24,9 @@ export function Contact() {
       >
         {label}
       </Link>
-      <p className="max-w-max max-h-max my-2 font-sans text-sm md:text-base font-normal text-left text-theme-dark dark:text-theme-light">
+      <Typography.P>
         Você pode me encontrar em qualquer uma das redes sociais abaixo
-      </p>
+      </Typography.P>
       <SocialMediaList />
     </div>
   )
