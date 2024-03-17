@@ -36,9 +36,7 @@ interface IPostsProps extends IRootLayoutProps {}
 
 interface IPostContainerProps extends IRootLayoutProps {}
 
-interface ISectionContainerProps extends IRootLayoutProps {
-  title?: string
-}
+interface ISectionContainerProps extends IRootLayoutProps {}
 
 interface IAnimationProps extends IRootLayoutProps {}
 
