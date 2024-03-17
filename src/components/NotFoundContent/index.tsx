@@ -1,3 +1,4 @@
+import { Typography } from "@/components/Typography"
 import Image from "next/image"
 import Link from "next/link"
 import { BsArrowLeftShort } from "react-icons/bs"
@@ -5,6 +6,7 @@ import { BsArrowLeftShort } from "react-icons/bs"
 export function NotFoundContent(): JSX.Element {
   return (
     <div className="flex flex-col items-start justify-center w-full h-full gap-4">
+      <Typography.H1>Página não encontrada</Typography.H1>
       <p className="text-black dark:text-white font-normal text-sm text-start md:text-base my-2 py-1">
         <Link
           href="/"
