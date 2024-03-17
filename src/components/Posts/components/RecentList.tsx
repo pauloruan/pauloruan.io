@@ -1,19 +1,23 @@
-import { RecentCard } from "./RecentCard"
+import { Card } from "./Card"
+
+interface IPostsListProps {
+  posts: IPost[]
+}
 
 export function RecentList({ posts }: IPostsListProps): JSX.Element {
   const lastPosts = posts
     .slice()
-    .filter((post: INotionPost) => post.status === "Concluído")
+    .filter((post: IPost) => post.published)
     .sort(
       (a, b) =>
-        new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     )
     .slice(0, 3)
 
   return (
     <ul className="w-full h-full flex flex-col my-1 space-y-4">
-      {lastPosts.map((post: INotionPost) => (
-        <RecentCard key={post.slug} {...post} />
+      {lastPosts.map((post: IPost) => (
+        <Card key={post.slug} {...post} />
       ))}
     </ul>
   )
