@@ -70,7 +70,7 @@ export const technologies: ITechnology[] = [
     slug: "react",
     url: "https://pt-br.reactjs.org",
     icon: FaReact,
-    frequentlyUsed: false,
+    frequentlyUsed: true,
     label: "React",
     renderLabel: false
   },
@@ -140,7 +140,7 @@ export const technologies: ITechnology[] = [
     slug: "redis",
     url: "https://redis.io",
     icon: SiRedis,
-    frequentlyUsed: false,
+    frequentlyUsed: true,
     label: "Redis",
     renderLabel: false
   },
