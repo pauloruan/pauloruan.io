@@ -1,3 +1,4 @@
+import { Typography } from "@/components/Typography"
 import { Badge } from "@/components/ui/badge"
 import { technologies } from "@/utils/technologies"
 
@@ -9,9 +10,7 @@ export function FrequentTechnologies() {
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-start my-1 py-2 px-2 space-y-2">
-      <h3 className="text-lg md:text-xl max-w-max max-h-max my-1 py-1 font-sans font-semibold text-black dark:text-white">
-        Tecnologias utilizadas frequentemente
-      </h3>
+      <Typography.H3>Tecnologias utilizadas frequentemente</Typography.H3>
       <div className="w-full h-full max-w-xl flex flex-row flex-wrap justify-start items-center gap-2">
         {orderedTechnologies.map(({ slug, name }: ITechnology) => (
           <Badge
