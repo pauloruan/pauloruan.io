@@ -4,20 +4,21 @@ import { Footer } from "@/components/shared/Footer"
 import { Header } from "@/components/shared/Header"
 import { SectionContainer } from "@/components/shared/SectionContainer"
 import { GlobalContext } from "@/contexts/GlobalContext"
+import { client } from "@/lib/sanity.client"
+import { sanityQueries } from "@/lib/sanity.queries"
 import { NextSeo } from "next-seo"
 import { useContext, useEffect } from "react"
-import { getPosts } from "../_services/notion"
 
 interface BlogProps {
-  posts: INotionPost[]
+  posts: IPost[]
 }
 
 interface BlogGetStaticProps {
-  props: BlogProps // Ajuste para usar BlogProps
+  props: BlogProps
 }
 
 export async function getStaticProps(): Promise<BlogGetStaticProps> {
-  const posts = await getPosts()
+  const posts = await client.fetch(sanityQueries.posts)
 
   return {
     props: { posts }
@@ -29,6 +30,7 @@ export default function Blog({ posts }: BlogProps): JSX.Element {
 
   useEffect(() => {
     setPosts(posts)
+    console.log("posts: ", posts)
   })
 
   return (
@@ -51,7 +53,7 @@ export default function Blog({ posts }: BlogProps): JSX.Element {
       />
       <Animation>
         <Header />
-        <SectionContainer title="Blog">
+        <SectionContainer>
           <BlogContent />
         </SectionContainer>
         <Footer />
