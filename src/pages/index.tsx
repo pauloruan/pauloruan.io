@@ -3,27 +3,45 @@ import { Animation } from "@/components/shared/Animation"
 import { Footer } from "@/components/shared/Footer"
 import { Header } from "@/components/shared/Header"
 import { SectionContainer } from "@/components/shared/SectionContainer"
-import { sanityQueries } from "@/utils/sanityQueries"
-import { GlobalContext } from "@contexts/GlobalContext"
-import { client } from "@lib/sanity.client"
+import { GlobalContext } from "@/contexts/GlobalContext"
+import { client } from "@/lib/sanity.client"
+import { sanityQueries } from "@/lib/sanity.queries"
 import { NextSeo } from "next-seo"
 import { useContext, useEffect } from "react"
 
-export async function getStaticProps(): Promise<HomeGetStaticProps> {
-  const posts = await client.fetch(sanityQueries.posts)
-
-  return { props: { posts } }
+interface BlogProps {
+  posts: IPost[]
+  about: IAbout
+  experiencies: IExperience[]
 }
 
-export default function Home({ posts }: HomeProps): JSX.Element {
-  const { setPosts } = useContext(GlobalContext)
+interface BlogGetStaticProps {
+  props: BlogProps
+}
+
+export async function getStaticProps(): Promise<BlogGetStaticProps> {
+  const posts = await client.fetch(sanityQueries.posts)
+  const [about] = await client.fetch(sanityQueries.about)
+  const experiencies = await client.fetch(sanityQueries.experiencies)
+
+  return { props: { posts, about, experiencies } }
+}
+
+export default function Home(props: BlogProps): JSX.Element {
+  const { posts, about, experiencies } = props
+  const { setPosts, setAbout, setExperiencies } = useContext(GlobalContext)
+  console.log("about: ", about)
+  // console.log("posts: ", posts)
+  console.log("experiencies: ", experiencies)
 
   useEffect(() => {
     setPosts(posts)
+    setAbout(about)
+    setExperiencies(experiencies)
   })
 
   return (
-    <main className="min-h-screen w-full bg-cod-gray-100 dark:bg-cod-gray-900">
+    <main className="min-h-screen w-full bg-background dark:bg-background">
       <NextSeo
         title="Paulo Ruan"
         description="Desenvolvedor Web Full Stack, apaixonado por tecnologia e programação."

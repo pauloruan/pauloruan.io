@@ -3,19 +3,19 @@ import { Animation } from "@/components/shared/Animation"
 import { Footer } from "@/components/shared/Footer"
 import { Header } from "@/components/shared/Header"
 import { SectionContainer } from "@/components/shared/SectionContainer"
-import { sanityQueries } from "@/utils/sanityQueries"
-import { client } from "@lib/sanity.client"
+import { client } from "@/lib/sanity.client"
+import { sanityQueries } from "@/lib/sanity.queries"
 import { NextSeo } from "next-seo"
 
-export async function getStaticProps(): Promise<SobreGetStaticProps> {
+export async function getStaticProps(): Promise<ISobreGetStaticProps> {
   const [about] = await client.fetch(sanityQueries.about)
 
   return { props: { about } }
 }
 
-export default function Sobre({ about }: SobreProps): JSX.Element {
+export default function Sobre({ about }: ISobreProps): JSX.Element {
   return (
-    <main className="min-h-screen w-full bg-cod-gray-100 dark:bg-cod-gray-900">
+    <main className="min-h-screen w-full bg-theme-light dark:bg-theme-dark">
       <NextSeo
         title="Sobre | Paulo Ruan"
         description="Desenvolvedor Web Full Stack, apaixonado por tecnologia e programação."
@@ -34,7 +34,7 @@ export default function Sobre({ about }: SobreProps): JSX.Element {
       />
       <Animation>
         <Header />
-        <SectionContainer title="Sobre Mim" subtitle="Oi, eu sou o Paulo Ruan!">
+        <SectionContainer>
           <AboutContent {...about} />
         </SectionContainer>
         <Footer />

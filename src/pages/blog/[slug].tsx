@@ -6,11 +6,13 @@ import { Loading } from "@/components/shared/Loading"
 import { SectionContainer } from "@/components/shared/SectionContainer"
 import { NextSeo } from "next-seo"
 import { useRouter } from "next/router"
-import { getPost, getSlugs } from "../_services/notion"
+import { client } from "@/lib/sanity.client"
+import { sanityQueries } from "@/lib/sanity.queries"
 
 export async function getStaticProps(context: any) {
   const { slug } = context.params
-  const post = await getPost(slug)
+  const [post] = await client.fetch(sanityQueries.postBySlug, { slug })
+
   return {
     props: {
       post
@@ -19,10 +21,10 @@ export async function getStaticProps(context: any) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await getSlugs()
+  const slugs = await client.fetch(sanityQueries.postSlugs)
 
-  const paths = slugs.map((slug: string) => ({
-    params: { slug }
+  const paths = slugs.map((post: IPost) => ({
+    params: { slug: post.slug }
   }))
 
   return {
@@ -31,11 +33,11 @@ export async function getStaticPaths() {
   }
 }
 
-interface IPost {
-  post: INotionFormattedPost
+interface IPostBySlug {
+  post: IPost
 }
 
-export default function Post({ post }: IPost): JSX.Element {
+export default function Post({ post }: IPostBySlug): JSX.Element {
   const router = useRouter()
 
   if (router.isFallback) {
