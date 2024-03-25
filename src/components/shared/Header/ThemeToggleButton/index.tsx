@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { useThemeToggle } from "@/hooks/useThemeToggle"
 import { RxMoon, RxSun } from "react-icons/rx"

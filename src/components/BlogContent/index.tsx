@@ -1,12 +1,22 @@
+"use client"
+
 import { Posts } from "@/components/Posts"
-import { GlobalContext } from "@/contexts/GlobalContext"
-import { useContext } from "react"
 import { Typography } from "../Typography"
+import { useQuery } from "@tanstack/react-query"
+import { getSanityPosts } from "@/lib/sanity.queries"
 
-export function BlogContent(): JSX.Element {
-  const { posts } = useContext(GlobalContext)
+interface BlogContentProps {
+  posts: IPost[]
+}
 
-  const filteredPosts = posts.slice().filter((post) => post.published)
+export function BlogContent({ posts }: BlogContentProps) {
+  const { data } = useQuery({
+    queryKey: ["posts"],
+    queryFn: getSanityPosts,
+    initialData: posts
+  })
+
+  const filteredPosts = data.slice().filter((post) => post.published)
 
   return (
     <div className="w-full h-full flex flex-col items-start justify-center gap-8">

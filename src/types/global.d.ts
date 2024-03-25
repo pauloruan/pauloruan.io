@@ -40,18 +40,6 @@ interface ISectionContainerProps extends IRootLayoutProps {}
 
 interface IAnimationProps extends IRootLayoutProps {}
 
-interface IAbout {
-  title: string
-  occupation: string
-  location: string
-  image: string
-  alt: string
-  content: IBodyContent[]
-  contact: IBodyContent[]
-  interests: string
-  pronouns: string
-}
-
 interface ISobreGetStaticProps {
   props: {
     about: IAbout

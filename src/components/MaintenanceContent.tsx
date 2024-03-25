@@ -3,10 +3,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { BsArrowLeftShort } from "react-icons/bs"
 
-export function NotFoundContent(): JSX.Element {
+export function MaintenanceContent(): JSX.Element {
   return (
     <div className="flex flex-col items-start justify-center w-full h-full gap-4">
-      <Typography.H1>Página não encontrada</Typography.H1>
+      <Typography.H1>Página em manutenção</Typography.H1>
+      <Typography.P className="text-black dark:text-white font-normal text-sm text-start md:text-base my-2 py-1">
+        Desculpe o transtorno, mas esta página está temporariamente
+        indisponível.
+      </Typography.P>
       <Typography.P className="text-black dark:text-white font-normal text-sm text-start md:text-base my-2 py-1">
         <Link
           href="/"
@@ -20,8 +24,8 @@ export function NotFoundContent(): JSX.Element {
         </Link>
       </Typography.P>
       <Image
-        src="https://media.giphy.com/media/JuFwy0zPzd6jC/giphy.gif"
-        alt="Gif de um gato andando em cima de um teclado de computador"
+        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGtvZWhwOXZianlzemtldHp1NDhsbWcyaXE0ZzRiZjZleDFtNmhicyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lzz3B3xLZluuY/giphy.gif"
+        alt="Gif de um gato digitando em um notebook"
         width={500}
         height={500}
         loading="eager"

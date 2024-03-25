@@ -1,7 +1,6 @@
 import { Typography } from "@/components/Typography"
 import { PortableTextReactComponents } from "@portabletext/react"
 import Link from "next/link"
-import React from "react"
 
 export const sanityComponents: Partial<PortableTextReactComponents> = {
   types: {

@@ -14,9 +14,9 @@ const noParamsImage = new ImageResponse(
 
 export default async function handler(request: NextRequest) {
   const { searchParams } = request.nextUrl
-  const url = "https://pauloruan.vercel.app"
-  const title = searchParams.get("title") || "Paulo Ruan - Desenvolvedor Web"
-  const path = searchParams.get("path") || "/"
+  const url = "https://pauloruan.dev"
+  const title = searchParams.get("title") || "Desenvolvedor Backend"
+  const path = searchParams.get("path") || ""
   const author = "Paulo Ruan"
 
   if (!title || !author) {
@@ -25,12 +25,67 @@ export default async function handler(request: NextRequest) {
 
   return new ImageResponse(
     (
-      <div tw="flex w-full h-full flex-col justify-center items-center font-sans bg-[#121212] text-[#e3e3e3]">
-        <div tw="flex text-[4rem] mb-4 font-black font-sans">{title}</div>
-        <div tw="flex flex-row justify-center items-center text-[#a4a4a4] font-bold">
-          <div tw="flex text-[2.5rem]">{author}</div>
-          <div tw="flex text-[2.5rem] text-[#e3e3e3] mx-4">|</div>
-          <div tw="flex text-[2.5rem]">{url.concat(path)}</div>
+      <div
+        style={{
+          display: "flex",
+          height: "100%",
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          flexDirection: "column",
+          backgroundImage: "linear-gradient(to bottom, #7dd3fc, #0369a1)"
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            height: "30%",
+            width: "98%",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            flexDirection: "column",
+            textAlign: "start",
+            padding: "20px",
+            backgroundColor: "#fff",
+            backdropFilter: "blur(90%)",
+            background: "rgba(255, 255, 255, 0.2)",
+            borderRadius: "16px",
+            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+            margin: "10px"
+          }}
+        >
+          <h1
+            style={{
+              color: "#09090b",
+              fontSize: 40,
+              letterSpacing: 1,
+              fontWeight: 900,
+              padding: 0,
+              margin: 0
+            }}
+          >
+            {author}
+          </h1>
+          <h2
+            style={{
+              color: "#09090b",
+              fontSize: 28,
+              letterSpacing: 1,
+              fontWeight: 600
+            }}
+          >
+            {title}
+          </h2>
+          <span
+            style={{
+              color: "#09090b",
+              fontSize: 20,
+              letterSpacing: 2,
+              fontWeight: 300
+            }}
+          >
+            {url.concat(path)}
+          </span>
         </div>
       </div>
     ),

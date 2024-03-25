@@ -1,14 +1,14 @@
 import { sanityComponents } from "@/components/PortableText"
 import { Typography } from "@/components/Typography"
-import { GlobalContext } from "@/contexts/GlobalContext"
 import { PortableText } from "@portabletext/react"
 import Link from "next/link"
-import { useContext } from "react"
 
-export function Experience() {
-  const { experiencies } = useContext(GlobalContext)
-  console.log(experiencies)
-  const orderedExperiencies = experiencies
+interface ExperienceProps {
+  experiences: IExperience[]
+}
+
+export function Experience({ experiences }: ExperienceProps) {
+  const orderedExperiences = experiences
     .slice()
     .sort((a, b) => new Date(b.start).getTime() - new Date(a.start).getTime())
 
@@ -17,10 +17,10 @@ export function Experience() {
       <Typography.H3>Experiencia</Typography.H3>
 
       <div className="w-full h-full flex flex-col justify-center items-start space-y-2 gap-4">
-        {orderedExperiencies.map((experience) => (
+        {orderedExperiences.map((experience) => (
           <div
             key={experience.company}
-            className="flex flex-col justify-center items-start space-y-2"
+            className="flex flex-col justify-center items-start space-y-2 font-sans"
           >
             <Typography.P className="w-full flex flex-col items-start justify-center max-w-max max-h-max space-y-1 font-sans">
               <Link

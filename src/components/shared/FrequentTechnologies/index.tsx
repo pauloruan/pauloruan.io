@@ -16,7 +16,7 @@ export function FrequentTechnologies() {
           <Badge
             key={slug}
             variant="secondary"
-            className="text-xs font-normal tracking-wide rounded-sm gap-2 shadow-sm"
+            className="text-xs font-sans font-normal tracking-wide rounded-sm gap-2 shadow-sm"
           >
             {name}
           </Badge>
