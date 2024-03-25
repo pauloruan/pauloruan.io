@@ -24,9 +24,6 @@ async function getContent(): Promise<AboutContentProps> {
 }
 
 export function AboutContent({ about, experiences }: AboutContentProps) {
-  console.log("about", about)
-  console.log("experiences", experiences)
-
   const { data } = useQuery({
     queryKey: ["about", "experiences"],
     queryFn: getContent,
