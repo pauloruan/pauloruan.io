@@ -1,10 +1,19 @@
 import { Typography } from "@/components/Typography"
+import Image from "next/image"
 
 export function Hero(): JSX.Element {
   return (
     <div className="w-full h-full flex flex-col justify-center items-start my-1 py-2 px-2 space-y-2 mb-4">
       <div className="space-y-2 md:space-y-5">
         <div className="max-h-max w-full flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center gap-2 md:gap-4">
+          <Image
+            src="https://avatars.githubusercontent.com/u/85769241?v=4"
+            alt="Paulo Ruan"
+            width={400}
+            height={400}
+            priority
+            className="rounded-md h-24 w-24 object-cover"
+          />
           <div className="w-full h-full flex flex-col justify-between items-start">
             <Typography.H1>Paulo Ruan</Typography.H1>
             <Typography.H2 className="text-black/70 dark:text-white/80">

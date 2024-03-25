@@ -1,4 +1,4 @@
-import { HomeContent } from "@/components/home/HomeContent"
+import { HomeContent } from "@/app/_components/HomeContent"
 import { SectionContainer } from "@/components/shared/SectionContainer"
 import { getSanityAbout, getSanityPosts } from "@/lib/sanity.queries"
 

@@ -1,7 +1,7 @@
 "use client"
 
+import { Hero } from "@/app/_components/Hero"
 import { RecentPosts } from "@/components/RecentPosts"
-import { Hero } from "@/components/home/Hero"
 import { Contact } from "@/components/shared/Contact"
 import { FrequentTechnologies } from "@/components/shared/FrequentTechnologies"
 import { getSanityAbout, getSanityPosts } from "@/lib/sanity.queries"
