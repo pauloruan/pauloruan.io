@@ -29,6 +29,7 @@ export function MaintenanceContent(): JSX.Element {
         width={500}
         height={500}
         loading="eager"
+        unoptimized
         priority
         className="object-contain object-center w-full h-full"
       />
