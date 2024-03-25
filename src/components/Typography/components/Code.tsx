@@ -5,14 +5,21 @@ import { nord } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 interface CodeProps extends HTMLProps<HTMLElement> {}
 
+interface CodeValue {
+  code: string
+  language: string
+}
+
 const syntaxHighlighterRef = createRef<SyntaxHighlighter>()
 
 export function Code({ value, className, ...props }: CodeProps) {
+  const isValue = value as unknown as CodeValue
+
   return (
     <SyntaxHighlighter
       {...props}
       PreTag="pre"
-      language={value.language}
+      language={String(isValue.language).toLowerCase()}
       style={nord}
       ref={syntaxHighlighterRef}
       wrapLines={false}
@@ -28,7 +35,7 @@ export function Code({ value, className, ...props }: CodeProps) {
       }}
       className={cn("w-full font-code text-xs md:text-base", className)}
     >
-      {String(value.code).replace(/\n$/, "")}
+      {String(isValue.code).trim()}
     </SyntaxHighlighter>
   )
 }
