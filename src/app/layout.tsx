@@ -2,6 +2,7 @@ import { Footer } from "@/components/shared/Footer"
 import { Header } from "@/components/shared/Header"
 import { ScrollToTopButton } from "@/components/shared/ScrollToTopButton"
 import { cn } from "@/lib/utils"
+import ProgressBarProvider from "@/providers/progress-bar"
 import ReactQueryProvider from "@/providers/react-query"
 import ThemeProvider from "@/providers/theme"
 import "@/styles/globals.css"
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Paulo Ruan",
     images: [
       {
-        url: "https://pauloruan.dev/api/og",
+        url: "https://pauloruan.dev/og.png",
         width: 1200,
         height: 630,
         alt: "Paulo Ruan"
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     images: [
       {
-        url: "https://pauloruan.dev/api/og",
+        url: "https://pauloruan.dev/og.png",
         width: 1200,
         height: 630,
         alt: "Paulo Ruan"
@@ -71,12 +72,14 @@ export default function RootLayout({ children }: IRootLayoutProps) {
         )}
       >
         <ThemeProvider>
-          <ReactQueryProvider>
-            <Header />
-            {children}
-            <Footer />
-            <ScrollToTopButton />
-          </ReactQueryProvider>
+          <ProgressBarProvider>
+            <ReactQueryProvider>
+              <Header />
+              {children}
+              <Footer />
+              <ScrollToTopButton />
+            </ReactQueryProvider>
+          </ProgressBarProvider>
         </ThemeProvider>
       </body>
     </html>
